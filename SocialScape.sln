@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialScape.Server", "SocialScape.Server\SocialScape.Server.csproj", "{5B2905D8-B383-432C-982A-35A1D8AB36E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialScape.Server", "SocialScape.Server\SocialScape.Server.csproj", "{5B2905D8-B383-432C-982A-35A1D8AB36E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialScape.Shared", "SocialScape.Shared\SocialScape.Shared.csproj", "{493ACDCA-AC97-42E9-847D-3E822086AE63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialScape.Shared", "SocialScape.Shared\SocialScape.Shared.csproj", "{493ACDCA-AC97-42E9-847D-3E822086AE63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialScape.Client", "SocialScape.Client\SocialScape.Client.csproj", "{225881AD-5132-4A0D-92D7-3EB73A471F8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialScape.Client", "SocialScape.Client\SocialScape.Client.csproj", "{225881AD-5132-4A0D-92D7-3EB73A471F8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
