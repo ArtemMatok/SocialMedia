@@ -1,6 +1,10 @@
-﻿<AuthorizeView>
+﻿@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<AuthorizeView>
     <Authorized>
-        Hello, @context.User.Identity.Name
+
+        Hello, @userName
+
         <a href="logout">Log out</a>
     </Authorized>
     <NotAuthorized>
@@ -8,3 +12,21 @@
         <a href="login">Log in</a>
     </NotAuthorized>
 </AuthorizeView>
+
+@code{
+
+
+    private string userName;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            userName = user.Identity.Name;
+        }
+    }
+
+}

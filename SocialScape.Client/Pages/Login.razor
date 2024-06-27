@@ -2,46 +2,124 @@
 @inject IAuthService _authService
 @inject NavigationManager _navManager
 
-<h1>Login</h1>
 
-@if (showErrors)
-{
-    <div class="alert alert-danger">
-        <p>@error</p>
-    </div>
-}
 
-<div class="card">
-    <div class="card-body">
-        <div class="card-title">Please enter your details</div>
-        <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
 
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <InputText Id="email" class="form-control" @bind-Value="loginModel.Email"></InputText>
-                <ValidationMessage For="@(()=>loginModel.Email)" />
+@*<div class="card">
+        <div class="card-body">
+            <div class="card-title">Please enter your details</div>
+            <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <InputText Id="email" class="form-control" @bind-Value="loginModel.Email"></InputText>
+                    <ValidationMessage For="@(()=>loginModel.Email)" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Password</label>
+                    <InputText Id="password" class="form-control" @bind-Value="loginModel.Password"></InputText>
+                    <ValidationMessage For="@(()=>loginModel.Password)" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </EditForm>
+        </div>
+    </div>*@
+
+<div class="main-authentication">
+    <div class="container @className" id="container">
+
+
+        <div class="form-container sign-up">
+
+            @if (showErrors)
+            {
+                <div>
+                    @foreach (var item in errors)
+                    {
+                        <p style="color:red;">@item</p>
+                    }
+                </div>
+            }
+            <EditForm Model="registerModel" OnValidSubmit="HandleRegistration">
+                <DataAnnotationsValidator />
+                @*@if (!string.IsNullOrWhiteSpace(errorMessageRegister))
+                    {
+                        <p class="text-danger">@errorMessageRegister</p>
+                    }*@
+                <h1 class="title-name">Create Account</h1>
+
+
+                <InputText @bind-Value="registerModel.Email" DisplayName="Name" placeholder="Full Name"></InputText>
+                <ValidationMessage For="()=>registerModel.Email" />
+
+                <InputText type="password" @bind-Value="registerModel.Password" DisplayName="Password" placeholder="Password"></InputText>
+                <ValidationMessage For="()=>registerModel.Password" />
+
+                <InputText type="password" @bind-Value="registerModel.ConfirmPassword" DisplayName="Password" placeholder="Password"></InputText>
+                <ValidationMessage For="()=>registerModel.ConfirmPassword" />
+                <button type="submit" @onclick="HandleRegistration">Register</button>
+            </EditForm>
+        </div>
+        <div class="form-container sign-in">
+            @if (showErrorsLogin)
+            {
+                <div>
+                    <p style="color:red;">@error</p>
+                </div>
+            }
+            <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+
+                <InputText @bind-Value="loginModel.Email" DisplayName="UserName" class="form-control" placeholder="Username"></InputText>
+                <ValidationMessage For="()=>loginModel.Email" />
+                <InputText type="password" @bind-Value="loginModel.Password" DisplayName="Password" placeholder="Password"></InputText>
+                <ValidationMessage For="()=>loginModel.Password" />
+                <button type="submit">Login</button>
+            </EditForm>
+        </div>
+        <div class="toggle-container ">
+            <div class="toggle ">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button @onclick="LoginClick" class="active" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button @onclick="RegisterClick" class="" id="register">Sign Up</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Password</label>
-                <InputText Id="password" class="form-control" @bind-Value="loginModel.Password"></InputText>
-                <ValidationMessage For="@(()=>loginModel.Password)" />
-            </div>
-         
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </EditForm>
+        </div>
     </div>
+
 </div>
 
 @code{
+
+    private bool click = false;
+    private string className => click == true ? "active" : "hidden";
+
+    private void RegisterClick()
+    {
+        click = true;
+        Console.WriteLine(className);
+    }
+    private void LoginClick()
+    {
+        click = false;
+    }
+
+    #region Login
     private LoginModel loginModel = new LoginModel();
-    private bool showErrors;
+    private bool showErrorsLogin;
     private string error = "";
 
     private async Task HandleLogin()
     {
-        showErrors = false;
+        showErrorsLogin = false;
 
         var result = await _authService.Login(loginModel);
 
@@ -53,9 +131,33 @@
         else
         {
             error = result.Error;
+            showErrorsLogin = true;
+        }
+
+    }
+    #endregion
+
+
+    #region Register
+    private RegisterModel registerModel = new RegisterModel();
+    private IEnumerable<string> errors;
+    private bool showErrors;
+    private async Task HandleRegistration()
+    {
+        showErrors = false;
+
+        var result = await _authService.Register(registerModel);
+
+        if (result.Successful)
+        {
+            _navManager.NavigateTo("/login");
+        }
+        else
+        {
+            errors = result.Errors;
             showErrors = true;
         }
 
     }
-
+    #endregion
 }
