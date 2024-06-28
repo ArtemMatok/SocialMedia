@@ -1,12 +1,80 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
-<LoginDisplay/>
+<nav>
+    <div class="container-main">
+        <h2 class="log">
+            Name SocialMedia
+        </h2>
+        <div class="search-bar">
+            <i class="uil uil-search"></i>
+            <input type="search" placeholder="Search for creators,inspirations, and projects" />
+        </div>
+        <div class="create">
+            <label class="btn-main btn-main-primary" for="create-post">Create Post</label>
+            <div class="profile-photo">
+                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+            </div>
+        </div>
+    </div>
+</nav>
+<main>
+    <div class="container-main">
+        <div class="left">
+            <a class="profile">
+                <div class="profile-photo">
+                    <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                </div>
+                <div class="handle">
+                    <h4>Full Name</h4>
+                    <p class="text-muted">@@username</p>
+                </div>
+            </a>
 
-<h1>Hello, world!</h1>
+            <div class="sidebar-main">
+                <a class="menu-item active">
+                    <span><i class="uil uil-home"></i></span><h3>Home</h3>
+                </a>
+                <a class="menu-item ">
+                    <span><i class="uil uil-compass"></i></span><h3>Explore</h3>
+                </a>
+                <a class="menu-item ">
+                    <span><i class="uil uil-bell" id="notification"><small class="notification-count">9+</small></i></span><h3>Notification</h3>
 
-Welcome to your new app.
-<div class="mb-3">
-    <label class="form-label">Enter int number</label>
-    
-</div>
+                    <div class="notifications-popup">
+                        <div>
+                            <div class="profile-photo">
+                                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                            </div>
+                            <div class="notifications-body">
+                                <b>Keke Benjamin</b> accepted your friend request
+                                <small class="text-muted">2 DAYS AGO</small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="menu-item ">
+                    <span><i class="uil uil-envelope-alt" id="message"><small class="notification-count"></small></i></span><h3>Message</h3>
+                </a>
+                <a class="menu-item ">
+                    <span><i class="uil uil-bookmark"></i></span><h3>Bookmark</h3>
+                </a>
+                <a class="menu-item ">
+                    <span><i class="uil uil-chart-line"></i></span><h3>Analytics</h3>
+                </a>
+                <a class="menu-item ">
+                    <span><i class="uil uil-palette"></i></span><h3>Theme</h3>
+                </a>
+                <a class="menu-item ">
+                    <span><i class="uil uil-setting"></i></span><h3>Settings</h3>
+                </a>
+
+            </div>
+        </div>
+        <div class="middle">
+
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+</main>
