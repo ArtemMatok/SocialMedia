@@ -40,7 +40,7 @@
                 <a class="menu-item ">
                     <span><i class="uil uil-bell" id="notification"><small class="notification-count">9+</small></i></span><h3>Notification</h3>
 
-                    <div class="notifications-popup">
+                    <div class="notification-popup">
                         <div>
                             <div class="profile-photo">
                                 <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
@@ -53,7 +53,7 @@
                     </div>
                 </a>
                 <a class="menu-item ">
-                    <span><i class="uil uil-envelope-alt" id="message"><small class="notification-count"></small></i></span><h3>Message</h3>
+                    <span><i class="uil uil-envelope-alt" id="message"><small class="notification-count">9+</small></i></span><h3>Message</h3>
                 </a>
                 <a class="menu-item ">
                     <span><i class="uil uil-bookmark"></i></span><h3>Bookmark</h3>
@@ -61,7 +61,7 @@
                 <a class="menu-item ">
                     <span><i class="uil uil-chart-line"></i></span><h3>Analytics</h3>
                 </a>
-                <a class="menu-item ">
+                <a @onclick="ThemeHandle" class="menu-item ">
                     <span><i class="uil uil-palette"></i></span><h3>Theme</h3>
                 </a>
                 <a class="menu-item ">
@@ -71,10 +71,231 @@
             </div>
         </div>
         <div class="middle">
+            <div class="stories">
+                <div class="story">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <p class="name">Your story</p>
+                </div>
+                <div class="story">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <p class="name">Your story</p>
+                </div>
+                <div class="story">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <p class="name">Your story</p>
+                </div>
+                <div class="story">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <p class="name">Your story</p>
+                </div>
+                <div class="story">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <p class="name">Your story</p>
+                </div>
+                <div class="story">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <p class="name">Your story</p>
+                </div>
+                <div class="story">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <p class="name">Your story</p>
+                </div>
+            </div>
 
+            <form class="create-post">
+                <div class="profile-photo">
+                    <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                </div>
+                <input type="text" placeholder="What`s on ypur mind, Diana" id="create-post" />
+                <input type="submit" value="Post" class="btn-main btn-main-primary" />
+            </form>
+
+            <div class="feeds">
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                            </div>
+                            <div class="ingo">
+                                <h3>Full Name</h3>
+                                <small>15 MINUTES AGO</small>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="photo">
+                        <img src="https://i.ibb.co/zQBK3YD/feed-5.jpg" />
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-dots"></i></span>
+                            <span><i class="uil uil-share-alt"></i></span>
+                        </div>
+                        <div class="bookmark">
+                            <span><i class="uil uil-bookmark-full"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span>
+                            <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                        </span>
+                        <span>
+                            <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                        </span>
+                        <span>
+                            <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                        </span>
+                        <p>Liked by <b>Ernset Achiever</b> and <b>2,323 others  </b></p>
+                    </div>
+
+                    <div class="caption">
+                        <p>
+                            <b>Lana Rose</b>Lorem ipsum dolor sit quisquameus.
+                            <span class="harsh-tag">#lifestyle</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="right">
+            <div class="messages">
+                <div class="heading">
+                    <h4>Messages</h4><i class="uil uil-edit"></i>
+                </div>
+
+                <div class="search-bar">
+                    <i class="uil uil-search"></i>
+
+                    <input type="search" placeholder="Search messages" id="message-search" />
+                </div>
+
+                <div class="category">
+                    <h6 class="active">Primary</h6>
+
+                </div>
+
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <div class="message-body">
+                        <h5>Edem Quistr</h5>
+                        <p class="text-muted">Just woke up bruh</p>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <div class="message-body">
+                        <h5>Edem Quistr</h5>
+                        <p class="text-muted">Just woke up bruh</p>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <div class="message-body">
+                        <h5>Edem Quistr</h5>
+                        <p class="text-muted">Just woke up bruh</p>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                    </div>
+                    <div class="message-body">
+                        <h5>Edem Quistr</h5>
+                        <p class="text-muted">Just woke up bruh</p>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
 </main>
+
+
+<div class="@(isClickedTheme?"customize-theme":"customize-theme-none")">
+    <div class="card">
+        <h2>Customize your view</h2>
+        <p>Manage your font size, colorm and background</p>
+
+        <div class="font-size">
+            <h4>Font Size</h4>
+            <div>
+                <h6>Aa</h6>
+                <div class="choose-size">
+                    <span class="font-size-1"></span>
+                    <span class="font-size-2 active"></span>
+                    <span class="font-size-3"></span>
+                    <span class="font-size-4"></span>
+                    <span class="font-size-5"></span>
+                </div>
+                <h3>Aa</h3>
+            </div>
+        </div>
+
+        <div class="color">
+            <h4>Color</h4>
+            <div class="choose-color">
+                <span class="color-1 active"></span>
+                <span class="color-2"></span>
+                <span class="color-3"></span>
+                <span class="color-4"></span>
+                <span class="color-5"></span>
+            </div>
+        </div>
+
+        <div class="background">
+            <h4>Background</h4>
+            <div class="choose-bg">
+                <div class="bg-1 active">
+                    <span></span>
+                    <h5>Light</h5>
+                </div>
+                <div class="bg-2">
+                    <span></span>
+                    <h5>Dim</h5>
+                </div>
+                <div class="bg-3">
+                    <span></span>
+                    <h5>Lights Out</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@code{
+    private bool isClickedTheme;
+
+    private void ThemeHandle()
+    {
+        isClickedTheme = true;
+    }
+}
