@@ -456,6 +456,7 @@ nav .create{
 
 /*-----Main------*/
 main{
+    margin-top:1rem;
     position:relative;
     top:5.5rem;
     overflow:visible;
@@ -622,6 +623,7 @@ main .container-main .left .profile{
 }
 
 .middle .stories .story::before{
+    border-radius:inherit;
     content:"";
     display:block;
     width:100%;
@@ -635,27 +637,27 @@ main .container-main .left .profile{
     z-index:2;
 }
 
-.middle .stories .story:nth-child(1) {
-    background: url("https://i.ibb.co/59wCg68/profile-8.jpg") no-repeat center center/cover;
-}
-.middle .stories .story:nth-child(2) {
-    background: url("https://i.ibb.co/59wCg68/profile-8.jpg") no-repeat center center/cover;
-}
-.middle .stories .story:nth-child(3) {
-    background: url("https://i.ibb.co/59wCg68/profile-8.jpg") no-repeat center center/cover;
-}
-.middle .stories .story:nth-child(4) {
-    background: url("https://i.ibb.co/59wCg68/profile-8.jpg") no-repeat center center/cover;
-}
-.middle .stories .story:nth-child(5) {
-    background: url("https://i.ibb.co/59wCg68/profile-8.jpg") no-repeat center center/cover;
-}
-.middle .stories .story:nth-child(6) {
-    background: url("https://i.ibb.co/59wCg68/profile-8.jpg") no-repeat center center/cover;
-}
-.middle .stories .story:nth-child(7) {
-    background: url("https://i.ibb.co/59wCg68/profile-8.jpg") no-repeat center center/cover;
-}
+    .middle .stories .story:nth-child(1) {
+        background: url("https://i.ibb.co/MfgFjt7/story-2.jpg") no-repeat center center/cover;
+    }
+    .middle .stories .story:nth-child(2) {
+        background: url("https://i.ibb.co/MfgFjt7/story-2.jpg") no-repeat center center/cover;
+    }
+    .middle .stories .story:nth-child(3) {
+        background: url("https://i.ibb.co/MfgFjt7/story-2.jpg") no-repeat center center/cover;
+    }
+    .middle .stories .story:nth-child(4) {
+        background: url("https://i.ibb.co/MfgFjt7/story-2.jpg") no-repeat center center/cover;
+    }
+    .middle .stories .story:nth-child(5) {
+        background: url("https://i.ibb.co/MfgFjt7/story-2.jpg") no-repeat center center/cover;
+    }
+    .middle .stories .story:nth-child(6) {
+        background: url("https://i.ibb.co/MfgFjt7/story-2.jpg") no-repeat center center/cover;
+    }
+    .middle .stories .story:nth-child(7) {
+        background: url("https://i.ibb.co/MfgFjt7/story-2.jpg") no-repeat center center/cover;
+    }
 
 .middle .story .profile-photo{
     width:2rem;
@@ -930,8 +932,8 @@ main .container-main .right{
     background: hsl(202,75%,60%);
 }
 
-.customize-theme .choose-color span .active{
-    border:5px solid white;
+.customize-theme .choose-color span.active {
+    border: 5px solid white;
 }
 
 /*----End Color------*/
@@ -986,3 +988,101 @@ main .container-main .right{
     margin-right:1rem;
 }
 /*-----End Background------*/
+
+/*----Big Tablets-------*/
+@media screen and (max-width:1200px){
+   .container-main{
+       width:96%;
+   }
+
+   main .container-main{
+       grid-template-columns:5rem auto 30vw;
+       gap:1rem;
+   }
+
+    .left{
+        width:5rem;
+        z-index:5;
+    }
+
+    main .container-main .left .profile{
+        display:none;
+    }
+
+    .sidebar-main h3{
+        display:none;
+    }
+
+    
+   .customize-theme .card{
+       width:80vw;
+   }
+}
+/*----End Big Tablets-------*/
+
+/*-----Small Tablets And Mobile Phone------*/
+@media screen and (max-width:992px){
+    nav .search-bar{
+        display:none;
+    }
+
+    main .container-main{
+        grid-template-columns:0 auto 5rem;
+    }
+
+    main .container-main .left{
+        grid-column:3/4;
+        position:fixed;
+        bottom:0;
+        right:0;
+    }
+
+    .left .notification-popup{
+        position:absolute;
+        left:-20rem;
+        width:20rem;
+    }
+
+    .left .notification-popup::before{
+        display:absolute;
+        top:1.3rem;
+        left:calc(20rem - 0.6rem);
+        display:block;
+    }
+
+    main .container-main .left .sidebar-main > div h3{
+        display:none;
+    }
+    
+    main .container-main .middle{
+        grid-column:1/3;
+    }
+
+    main .container-main .right{
+        display:none;
+    }
+    .customize-theme .card {
+        width: 92vw;
+    }
+    .customize-theme .choose-bg {
+        display: flow
+    }
+}
+
+@media screen and (max-width:610px) {
+    main .container-main .middle {
+        width: 81%;
+    }
+
+    .middle .stories{
+        gap:0.23rem;
+    }
+    main .container-main {
+        display: flex;
+    }
+
+    .customize-theme .choose-bg{
+        display:flow
+    }
+}
+    /*-----End Small Tablets And Mobile Phone------*/
