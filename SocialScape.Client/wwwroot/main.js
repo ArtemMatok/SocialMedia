@@ -7,7 +7,9 @@
 const fontSize = document.querySelectorAll('.choose-size span');
 var root = document.querySelector(':root');
 const colorPalete = document.querySelectorAll('.choose-color span');
-
+const bg1 = document.querySelector('.bg-1');
+const bg2 = document.querySelector('.bg-2');
+const bg3 = document.querySelector('.bg-3');
 
 
 //Fonts
@@ -59,4 +61,41 @@ window.changeColorePalete = (numberOfColor) => {
     }
 
     root.style.setProperty('--primary-color-hue', primaryHue);
+}
+
+
+
+let lightColorLightness;
+let whiteColorLightness;
+let darkColorLightness;
+
+const changeBG = () => {
+    root.style.setProperty('--light-color-lightness', lightColorLightness);
+    root.style.setProperty('--white-color-lightness', whiteColorLightness);
+    root.style.setProperty('--dark-color-lightness', darkColorLightness);
+}
+
+window.changeBackground = (numberOfBackground) => {
+    if (numberOfBackground == 1) {
+    
+        darkColorLightness = '17%';
+        whiteColorLightness = '95%';
+        lightColorLightness = '100%';
+        changeBG();
+        
+    }else if (numberOfBackground == 2) {
+        darkColorLightness = '95%';
+        whiteColorLightness = '20%';
+        lightColorLightness = '15%';
+
+        
+        changeBG();
+
+    } else if (numberOfBackground == 3) {
+        darkColorLightness = '95%';
+        whiteColorLightness = '10%';
+        lightColorLightness = '0%';
+
+        changeBG();
+    }
 }

@@ -5,6 +5,7 @@
     --dark-color-lightness: 17%;
     --light-color-lightness: 95%;
     --white-color-lightness: 100%;
+
     --main-color: #7952b3;
     --color-white: hsl(252,30%,var(--white-color-lightness));
     --color-light: hsl(252,30%,var(--light-color-lightness));
@@ -15,11 +16,15 @@
     --color-danger: hsl(0,95%,65%);
     --color-dark: hsl(252,30%,var(--dark-color-lightness));
     --color-black: hsl(252,30%,10%);
+
+
     --border-radius: 2rem;
     --card-border-radius: 1rem;
     --btn-padding: 0.6rem 2rem;
     --search-padding: 0.6rem 1rem;
     --card-padding: 1rem;
+
+
     --sticky-top-left: 5.4rem;
     --sticky-top-right: -18rem;
 }
@@ -773,12 +778,27 @@ main .container-main .right{
 .right .messages .search-bar{
     display:flex;
     margin-bottom:1rem;
+    background: var(--color-light);
+    border-radius: var(--border-radius);
+    padding: var(--search-padding);
+
 }
 
-.right .messages .category{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:1rem;
+.right .messages .search-bar input[type="search" i] {
+    background: transparent;
+    width: 30vw;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+}
+
+
+
+
+.right .messages .category {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .right .messages .category h6{
@@ -914,7 +934,10 @@ main .container-main .right{
     width:2.2rem;
     height:2.2rem;
     border-radius:50%;
+    cursor:pointer;
 }
+
+
 
 .customize-theme .choose-color span:nth-child(1){
     background:hsl(252,75%,60%);

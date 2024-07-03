@@ -263,15 +263,15 @@
         <div class="background">
             <h4>Background</h4>
             <div class="choose-bg">
-                <div style="margin-bottom:2px;" class="bg-1 active">
+                <div @onclick="()=>ChangeBackground(1)" style="margin-bottom:2px;" class="@(backgroundNumber == 1?"bg-1 active":"bg-1")">
                     <span></span>
                     <h5>Light</h5>
                 </div>
-                <div style="margin-bottom:2px;"  class="bg-2">
+                <div @onclick="()=>ChangeBackground(2)" style="margin-bottom:2px;"  class="@(backgroundNumber == 2?"bg-2 active":"bg-2")">
                     <span></span>
                     <h5>Dim</h5>
                 </div>
-                <div style="margin-bottom:2px;" class="bg-3">
+                <div @onclick="()=>ChangeBackground(3)" style="margin-bottom:2px;" class="@(backgroundNumber == 3?"bg-3 active":"bg-3")">
                     <span></span>
                     <h5>Lights Out</h5>
                 </div>
@@ -286,6 +286,7 @@
     private bool isClickedTheme;
     private int sizeNumber = 3;
     private int colorNumber = 1;
+    private int backgroundNumber = 1;
 
     protected override async Task OnInitializedAsync()
     {
@@ -314,5 +315,11 @@
     {
         colorNumber = numberOfColor;
         await _jsRuntime.InvokeVoidAsync("window.changeColorePalete", numberOfColor);
+    }
+
+    private async Task ChangeBackground(int numberOfBackground)
+    {
+        backgroundNumber = numberOfBackground;
+        await _jsRuntime.InvokeVoidAsync("window.changeBackground", numberOfBackground);
     }
 }
