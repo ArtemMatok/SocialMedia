@@ -15,6 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\img\log.svg" />
+    <None Include="wwwroot\img\register.svg" />
     <None Include="wwwroot\main.js" />
   </ItemGroup>
 

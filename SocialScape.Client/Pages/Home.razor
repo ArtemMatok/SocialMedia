@@ -1,5 +1,7 @@
 ﻿@page "/"
 @inject IJSRuntime _jsRuntime
+@inject AuthenticationStateProvider _authStateProvider
+@inject NavigationManager _navManager 
 
 <nav>
     <div class="container-main">
@@ -105,13 +107,7 @@
 
             </div>
 
-            <form class="create-post">
-                <div class="profile-photo">
-                    <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                </div>
-                <input type="text" placeholder="What`s on ypur mind, Diana" id="create-post" />
-                <input type="submit" value="Post" class="btn-main btn-main-primary" />
-            </form>
+            
 
             <div class="feeds">
                 <div class="feed">
@@ -267,7 +263,7 @@
                     <span></span>
                     <h5>Light</h5>
                 </div>
-                <div @onclick="()=>ChangeBackground(2)" style="margin-bottom:2px;"  class="@(backgroundNumber == 2?"bg-2 active":"bg-2")">
+                <div @onclick="()=>ChangeBackground(2)" style="margin-bottom:2px;" class="@(backgroundNumber == 2?"bg-2 active":"bg-2")">
                     <span></span>
                     <h5>Dim</h5>
                 </div>
@@ -277,20 +273,31 @@
                 </div>
             </div>
         </div>
-        <button @onclick="() => ThemeHandle(0)" style="margin-top:1.5rem; font-size:1.8rem;"  class="btn-main btn-main-primary ">Save</button>
+        <button @onclick="() => ThemeHandle(0)" style="margin-top:1.5rem; font-size:1.8rem;" class="btn-main btn-main-primary ">Save</button>
     </div>
 
 </div>
 
 @code{
+
+
+
+
+
     private bool isClickedTheme;
     private int sizeNumber = 3;
-    private int colorNumber = 1;
+    private int colorNumber = 5;
     private int backgroundNumber = 1;
 
     protected override async Task OnInitializedAsync()
     {
-        await _jsRuntime.InvokeVoidAsync("window.alertShow");
+        //var authState = await _authStateProvider.GetAuthenticationStateAsync();
+        //if(authState.User.Identity.Name == null)
+        //{
+        //    _navManager.NavigateTo("/login");
+
+
+        //}
     }
 
     private void ThemeHandle(int action)
