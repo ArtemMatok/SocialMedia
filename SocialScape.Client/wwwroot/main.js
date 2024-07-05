@@ -99,3 +99,18 @@ window.changeBackground = (numberOfBackground) => {
         changeBG();
     }
 }
+
+
+
+//////Authentication//////
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector('.container-auth');
+
+window.signUpBtn = () => {
+    container.classList.add("sign-up-mode");
+} 
+
+window.signInBtn = () => {
+    container.classList.add("sign-in-mode");
+} 

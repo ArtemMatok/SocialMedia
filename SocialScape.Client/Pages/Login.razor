@@ -2,6 +2,7 @@
 @layout EmptyLayout
 @inject IAuthService _authService
 @inject NavigationManager _navManager
+@inject IJSRuntime _jsRuntime
 
 @*<div class="main-authentication">
         <div class="container @className" id="container">
@@ -70,7 +71,7 @@
     </div>*@
 
 
-<div class="container-auth">
+<div class="container-auth @(isSignUpClick == true?"sign-up-mode":"sign-in-mode")">
     <div class="forms-container">
         <div class="signin-signup">
             <form class="sign-in-form">
@@ -78,6 +79,7 @@
                 <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Username" />
+                    
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -117,20 +119,20 @@
             <div class="content-auth">
                 <h3>New here?</h3>
                 <p>Join KozakSpace and connect with vibrant minds. Your journey starts now!</p>
-                <button class="btn-auth transparent"></button>
+                <button @onclick="()=>SignUpClick(0)" class="btn-auth-transparent" id="sign-up-btn">Sign up</button>
             </div>
 
-            <img src="/img/log.svg" />
+            <img class="image" src="/img/log.svg" />
         </div>
 
         <div class="panel right-panel">
             <div class="content-auth">
                 <h3>One of us?</h3>
                 <p>Welcome back to KozakSpace! Dive in and see what's new today.</p>
-                <button class="btn-auth transparent"></button>
+                <button @onclick="()=>SignUpClick(1)" class="btn-auth-transparent" id="sign-in-btn">Sign in</button>
             </div>
 
-            <img src="/img/log.svg" />
+            <img class="image" src="/img/register.svg" />
         </div>
     </div>
 </div>
@@ -141,18 +143,21 @@
 
 @code{
 
-    private bool click = false;
-    private string className => click == true ? "active" : "hidden";
+    #region Change Login/Register
+    private bool isSignUpClick;
 
-    private void RegisterClick()
+    private void SignUpClick(int numberOfClick)
     {
-        click = true;
-        Console.WriteLine(className);
+        if(numberOfClick == 0)
+        {
+            isSignUpClick = true ;
+        }
+        else
+        {
+            isSignUpClick = false ;
+        }
     }
-    private void LoginClick()
-    {
-        click = false;
-    }
+    #endregion
 
     #region Login
     private LoginModel loginModel = new LoginModel();
