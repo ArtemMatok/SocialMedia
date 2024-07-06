@@ -27,7 +27,7 @@ namespace SocialScape.Client.Services
             var result = await _httpClient.PostAsJsonAsync("api/Account/Register", registerModel);
             if(!result.IsSuccessStatusCode)
             {
-                return new RegisterResult { Successful = false, Errors = new List<string> { "Error occured"} };
+                return new RegisterResult { Successful = false, Errors = new List<string> { "Error occured.Try to change the email"} };
             }
 
             return new RegisterResult { Successful = true, Errors = new List<string> { "Account Created successfully" } };

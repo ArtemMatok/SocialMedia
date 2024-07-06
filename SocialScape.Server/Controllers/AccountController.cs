@@ -32,13 +32,14 @@ namespace SocialScape.Server.Controllers
         {
             var newUser = new IdentityUser { UserName = model.Email, Email = model.Email };
 
+            
             var result = await _userManager.CreateAsync(newUser, model.Password);
 
             if (!result.Succeeded)
             {
                 var errors = result.Errors.Select(x => x.Description);
 
-                return Ok(new RegisterResult { Successful = false, Errors = errors });
+                return BadRequest(new RegisterResult { Successful = false, Errors = errors });
             }
 
             return Ok(new RegisterResult { Successful = true });
