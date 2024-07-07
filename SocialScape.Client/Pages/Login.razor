@@ -3,195 +3,101 @@
 @inject IAuthService _authService
 @inject NavigationManager _navManager
 @inject IJSRuntime _jsRuntime
-@*<div class="main-authentication">
-        <div class="container @className" id="container">
 
 
-            <div class="form-container sign-up">
+<Preload></Preload>
 
-                @if (showErrors)
-                {
-                    <div>
-                        @foreach (var item in errors)
-                        {
-                            <p style="color:red;">@item</p>
-                        }
-                    </div>
-                }
-                <EditForm Model="registerModel" OnValidSubmit="HandleRegistration">
+@if (isLodaer)
+{
+   <LoaderComponent/>
+
+}
+else
+{
+    <div class="container-auth @(isSignUpClick == true?"sign-up-mode":"sign-in-mode")">
+        <div class="forms-container">
+            <div class="signin-signup">
+
+
+
+                <EditForm class="form sign-in-form" Model="loginModel" OnValidSubmit="HandleLogin">
                     <DataAnnotationsValidator />
-
-                    <h1 class="title-name">Create Account</h1>
-
-
-                    <InputText @bind-Value="registerModel.Email" DisplayName="Name" placeholder="Full Name"></InputText>
-                    <ValidationMessage For="()=>registerModel.Email" />
-
-                    <InputText type="password" @bind-Value="registerModel.Password" DisplayName="Password" placeholder="Password"></InputText>
-                    <ValidationMessage For="()=>registerModel.Password" />
-
-                    <InputText type="password" @bind-Value="registerModel.ConfirmPassword" DisplayName="Password" placeholder="Password"></InputText>
-                    <ValidationMessage For="()=>registerModel.ConfirmPassword" />
-                    <button type="submit" @onclick="HandleRegistration">Register</button>
-                </EditForm>
-            </div>
-            <div class="form-container sign-in">
-                @if (showErrorsLogin)
-                {
-                    <div>
-                        <p style="color:red;">@error</p>
-                    </div>
-                }
-                <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
-
-                    <InputText @bind-Value="loginModel.Email" DisplayName="UserName" class="form-control" placeholder="Username"></InputText>
-                    <ValidationMessage For="()=>loginModel.Email" />
-                    <InputText type="password" @bind-Value="loginModel.Password" DisplayName="Password" placeholder="Password"></InputText>
-                    <ValidationMessage For="()=>loginModel.Password" />
-                    <button type="submit">Login</button>
-                </EditForm>
-            </div>
-            <div class="toggle-container ">
-                <div class="toggle ">
-                    <div class="toggle-panel toggle-left">
-                        <h1>Welcome Back!</h1>
-                        <p>Enter your personal details to use all of site features</p>
-                        <button @onclick="LoginClick" class="active" id="login">Sign In</button>
-                    </div>
-                    <div class="toggle-panel toggle-right">
-                        <h1>Hello, Friend!</h1>
-                        <p>Register with your personal details to use all of site features</p>
-                        <button @onclick="RegisterClick" class="" id="register">Sign Up</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>*@
-
-
-<div class="container-auth @(isSignUpClick == true?"sign-up-mode":"sign-in-mode")">
-    <div class="forms-container">
-        <div class="signin-signup">
-
-            <!--<form class="sign-in-form">
-                <h2 class="title">Sign in</h2>-->
-            @*Error Logic*@
-            @*<p style="color:red">Error</p>*@
-
-            <!--<div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input @bind-value="loginModel.Email" type="text" placeholder="Email" />
-                </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <input @bind-value="loginModel.Password" type="password" placeholder="Password" />
-                </div>
-                <button @onsubmit="HandleLogin" type="submit" class="btn-auth solid">Login</button>
-
-            </form>-->
-
-            <EditForm class="form sign-in-form" Model="loginModel" OnValidSubmit="HandleLogin">
-                <DataAnnotationsValidator />
-                <h2 class="title">Sign in</h2>
-                @if (showErrorsLogin)
-                {
-                    <p style="color:red">@error</p>
-                }
-                <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <InputText placeholder="Email" @bind-Value="loginModel.Email" DisplayName="UserName" class="input"></InputText>
-                    <ValidationMessage For="()=>loginModel.Email" />
-                </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <InputText type="password" placeholder="Passwod" @bind-Value="loginModel.Password" DisplayName="Password" class="input"></InputText>
-                    <ValidationMessage style="margin-bottom:3px;" For="()=>loginModel.Password" />
-                </div>
-                <button type="submit" class="btn-auth solid">Login</button>
-
-            </EditForm>
-            @*<EditForm class="sign-in-form" Model="loginModel" OnValidSubmit="HandleLogin">
-
-                    <InputText @bind-Value="loginModel.Email" DisplayName="UserName" class="form-control" placeholder="Username"></InputText>
-                    <ValidationMessage For="()=>loginModel.Email" />
-                    <InputText type="password" @bind-Value="loginModel.Password" DisplayName="Password" placeholder="Password"></InputText>
-                    <ValidationMessage For="()=>loginModel.Password" />
-                    <button type="submit">Login</button>
-                </EditForm>*@
-
-
-            @*<form class="sign-up-form">
-                    <h2 class="title">Sign up</h2>
+                    <h2 class="title">Sign in</h2>
+                    @if (showErrorsLogin)
+                    {
+                        <p style="color:red">@error</p>
+                    }
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" />
-                    </div>
-                    <div class="input-field">
-                        <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Email" />
+                        <InputText placeholder="Email" @bind-Value="loginModel.Email" DisplayName="UserName" class="input"></InputText>
+                        <ValidationMessage For="()=>loginModel.Email" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" />
+                        <InputText type="password" placeholder="Passwod" @bind-Value="loginModel.Password" DisplayName="Password" class="input"></InputText>
+                        <ValidationMessage style="margin-bottom:3px;" For="()=>loginModel.Password" />
                     </div>
-                    <input type="submit" value="Sign up" class="btn-auth solid" />
+                    <button type="submit" class="btn-auth solid">Login</button>
 
-                </form>*@
-        <EditForm Model="registerModel" OnValidSubmit="HandleRegistration" class="form sign-up-form">
-            <DataAnnotationsValidator />
+                </EditForm>
 
-            <h2 class="title">Sign up</h2>
-            @if (showErrors)
-            {
-                foreach (var item in errors)
-                {
-                    <p style="color:red;">@item</p>
-                }
-            }
-            <div class="input-field">
-                <i class="fas fa-user"></i>
-                <InputText placeholder="Email" @bind-Value="registerModel.Email" DisplayName="UserName" class="input"></InputText>
-                <ValidationMessage For="()=>registerModel.Email" />
+                <EditForm Model="registerModel" OnValidSubmit="HandleRegistration" class="form sign-up-form">
+                    <DataAnnotationsValidator />
+
+                    <h2 class="title">Sign up</h2>
+                    @if (showErrors)
+                    {
+                        foreach (var item in errors)
+                        {
+                            <p style="color:red;">@item</p>
+                        }
+                    }
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <InputText placeholder="Email" @bind-Value="registerModel.Email" DisplayName="UserName" class="input"></InputText>
+                        <ValidationMessage For="()=>registerModel.Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <InputText type="password" placeholder="Passwod" @bind-Value="registerModel.Password" DisplayName="Password" class="input"></InputText>
+                        <ValidationMessage For="()=>registerModel.Password" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <InputText type="password" placeholder="Passwod" @bind-Value="registerModel.ConfirmPassword" DisplayName="Password" class="input"></InputText>
+                        <ValidationMessage For="()=>registerModel.ConfirmPassword" />
+                    </div>
+                    <button type="submit" class="btn-auth solid">Sign up</button>
+                </EditForm>
             </div>
-            <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <InputText type="password" placeholder="Passwod" @bind-Value="registerModel.Password" DisplayName="Password" class="input"></InputText>
-                <ValidationMessage For="()=>registerModel.Password" />
+        </div>
+
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content-auth">
+                    <h3>New here?</h3>
+                    <p>Join KozakSpace and connect with vibrant minds. Your journey starts now!</p>
+                    <button @onclick="()=>SignUpClick(0)" class="btn-auth-transparent" id="sign-up-btn">Sign up</button>
+                </div>
+
+                <img class="image" src="/img/log.svg" />
             </div>
-            <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <InputText type="password" placeholder="Passwod" @bind-Value="registerModel.ConfirmPassword" DisplayName="Password" class="input"></InputText>
-                <ValidationMessage For="()=>registerModel.ConfirmPassword" />
+
+            <div class="panel right-panel">
+                <div class="content-auth">
+                    <h3>One of us?</h3>
+                    <p>Welcome back to KozakSpace! Dive in and see what's new today.</p>
+                    <button @onclick="()=>SignUpClick(1)" class="btn-auth-transparent" id="sign-in-btn">Sign in</button>
+                </div>
+
+                <img class="image" src="/img/register.svg" />
             </div>
-            <button type="submit" class="btn-auth solid">Sign up</button>
-        </EditForm>
         </div>
     </div>
 
+}
 
-    <div class="panels-container">
-        <div class="panel left-panel">
-            <div class="content-auth">
-                <h3>New here?</h3>
-                <p>Join KozakSpace and connect with vibrant minds. Your journey starts now!</p>
-                <button @onclick="()=>SignUpClick(0)" class="btn-auth-transparent" id="sign-up-btn">Sign up</button>
-            </div>
-
-            <img class="image" src="/img/log.svg" />
-        </div>
-
-        <div class="panel right-panel">
-            <div class="content-auth">
-                <h3>One of us?</h3>
-                <p>Welcome back to KozakSpace! Dive in and see what's new today.</p>
-                <button @onclick="()=>SignUpClick(1)" class="btn-auth-transparent" id="sign-in-btn">Sign in</button>
-            </div>
-
-            <img class="image" src="/img/register.svg" />
-        </div>
-    </div>
-</div>
 
 
 
@@ -199,11 +105,17 @@
 
 @code{
 
-
+    private bool isLodaer;
 
     protected override void OnInitialized()
     {
-        Console.WriteLine("Asdasd");
+
+    }
+
+
+    private void TestClick()
+    {
+        isLodaer = true;
     }
 
     #region Login
@@ -213,6 +125,7 @@
 
     private async Task HandleLogin()
     {
+        isLodaer = true;
         showErrorsLogin = false;
 
         var result = await _authService.Login(loginModel);
@@ -220,10 +133,12 @@
 
         if (result.Successful)
         {
+            isLodaer = false;
             _navManager.NavigateTo("/");
         }
         else
         {
+            isLodaer = false;
             error = result.Error;
             showErrorsLogin = true;
         }
@@ -245,7 +160,7 @@
         if (result.Successful)
         {
             isSignUpClick = false;
-           
+
         }
         else
         {

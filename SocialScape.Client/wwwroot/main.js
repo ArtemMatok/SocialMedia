@@ -114,3 +114,15 @@ window.signUpBtn = () => {
 window.signInBtn = () => {
     container.classList.add("sign-in-mode");
 } 
+
+
+const stars = document.querySelectorAll("#star");
+
+
+    stars.forEach((star) => {
+        let duration = Math.random() * (1.2 - 0.6) + 0.6;
+        console.log(duration);
+        star.style.animation = `stars ${duration}s infinite linear`;
+    })
+
+   
