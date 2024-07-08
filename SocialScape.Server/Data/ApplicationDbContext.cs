@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SocialScape.Shared.Models.MediaAccountFold;
 
 
 
@@ -12,6 +13,7 @@ namespace SocialScape.Server.Data
                 
         }
 
+        public DbSet<MediaAccount> MediaAccounts { get; set; }  
         
     }
 }

@@ -1237,7 +1237,7 @@ main .container-main .right{
 
 @media screen and (max-width:610px) {
     main .container-main .middle {
-        width: 81%;
+        width: 90%;
     }
 
     .middle .stories{
@@ -1261,7 +1261,7 @@ main .container-main .right{
     height:100vh;
     top:0;
     left:0;
-    background-color:white
+    background-color:white;
     overflow:hidden;
     z-index:1000;
 }
@@ -1296,7 +1296,7 @@ main .container-main .right{
 }
 
 .title-loader{
-    color:#fff;
+    color:black;
     letter-spacing:1px;
     font-weight:600;
     font-size:1.5rem;
@@ -1320,9 +1320,9 @@ main .container-main .right{
     }
 }
 
-#star{
+/*#star{
     animation: stars 2s linear infinite;
-}
+}*/
 
 @keyframes stars{
     from{

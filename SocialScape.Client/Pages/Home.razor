@@ -3,280 +3,102 @@
 @inject AuthenticationStateProvider _authStateProvider
 @inject NavigationManager _navManager 
 
-<nav>
-    <div class="container-main">
-        <h2 class="log">
-            KozakSpace
-        </h2>
-        <div class="search-bar">
-            <i class="uil uil-search"></i>
-            <input type="search" placeholder="Search for creators,inspirations, and projects" />
-        </div>
-        <div class="create">
+
+
+<div class="middle">
+    <div class="stories">
+        <div class="story">
             <div class="profile-photo">
                 <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
             </div>
+            <p class="name">Your story</p>
         </div>
+        <div class="story">
+            <div class="profile-photo">
+                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+            </div>
+            <p class="name">Your story</p>
+        </div>
+        <div class="story">
+            <div class="profile-photo">
+                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+            </div>
+            <p class="name">Your story</p>
+        </div>
+        <div class="story">
+            <div class="profile-photo">
+                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+            </div>
+            <p class="name">Your story</p>
+        </div>
+        <div class="story">
+            <div class="profile-photo">
+                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+            </div>
+            <p class="name">Your story</p>
+        </div>
+
     </div>
-</nav>
-<main>
-    <div class="container-main">
-        <div class="left">
-            <a class="profile">
-                <div class="profile-photo">
-                    <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                </div>
-                <div class="handle">
-                    <h4>Full Name</h4>
-                    <p class="text-muted">@@username</p>
-                </div>
-            </a>
-
-            <div class="sidebar-main">
-                <a class="menu-item active">
-                    <span><i class="uil uil-home"></i></span><h3>Home</h3>
-                </a>
-                <a class="menu-item ">
-                    <span><i class="uil uil-compass"></i></span><h3>Explore</h3>
-                </a>
-                <a class="menu-item ">
-                    <span><i class="uil uil-bell" id="notification"><small class="notification-count">9+</small></i></span><h3>Notification</h3>
-
-                    <div class="notification-popup">
-                        <div>
-                            <div class="profile-photo">
-                                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                            </div>
-                            <div class="notifications-body">
-                                <b>Keke Benjamin</b> accepted your friend request
-                                <small class="text-muted">2 DAYS AGO</small>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a class="menu-item ">
-                    <span><i class="uil uil-envelope-alt" id="message"><small class="notification-count">9+</small></i></span><h3>Message</h3>
-                </a>
-                <a class="menu-item ">
-                    <span><i class="uil uil-bookmark"></i></span><h3>Bookmark</h3>
-                </a>
-                <a class="menu-item ">
-                    <span><i class="uil uil-chart-line"></i></span><h3>Analytics</h3>
-                </a>
-                <a @onclick="() => ThemeHandle(1)" class="menu-item ">
-                    <span><i class="uil uil-palette"></i></span><h3>Theme</h3>
-                </a>
-                <a class="menu-item ">
-                    <span><i class="uil uil-setting"></i></span><h3>Settings</h3>
-                </a>
-
-            </div>
-        </div>
-        <div class="middle">
-            <div class="stories">
-                <div class="story">
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <p class="name">Your story</p>
-                </div>
-                <div class="story">
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <p class="name">Your story</p>
-                </div>
-                <div class="story">
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <p class="name">Your story</p>
-                </div>
-                <div class="story">
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <p class="name">Your story</p>
-                </div>
-                <div class="story">
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <p class="name">Your story</p>
-                </div>
-
-            </div>
 
             
 
-            <div class="feeds">
-                <div class="feed">
-                    <div class="head">
-                        <div class="user">
-                            <div class="profile-photo">
-                                <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                            </div>
-                            <div class="ingo">
-                                <h3>Full Name</h3>
-                                <small>15 MINUTES AGO</small>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="photo">
-                        <img src="https://i.ibb.co/zQBK3YD/feed-5.jpg" />
-                    </div>
-
-                    <div class="action-buttons">
-                        <div class="interaction-buttons">
-                            <span><i class="uil uil-heart"></i></span>
-                            <span><i class="uil uil-comment-dots"></i></span>
-                            <span><i class="uil uil-share-alt"></i></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><i class="uil uil-bookmark-full"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="liked-by">
-                        <span>
-                            <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                        </span>
-                        <span>
-                            <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                        </span>
-                        <span>
-                            <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                        </span>
-                        <p>Liked by <b>Ernset Achiever</b> and <b>2,323 others  </b></p>
-                    </div>
-
-                    <div class="caption">
-                        <p>
-                            <b>Lana Rose</b>Lorem ipsum dolor sit quisquameus.
-                            <span class="harsh-tag">#lifestyle</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="right">
-            <div class="messages">
-                <div class="heading">
-                    <h4>Messages</h4><i class="uil uil-edit"></i>
-                </div>
-
-                <div class="search-bar">
-                    <i class="uil uil-search"></i>
-
-                    <input type="search" placeholder="Search messages" id="message-search" />
-                </div>
-
-                <div class="category">
-                    <h6 class="active">Primary</h6>
-
-                </div>
-
-                <div class="message">
+    <div class="feeds">
+        <div class="feed">
+            <div class="head">
+                <div class="user">
                     <div class="profile-photo">
                         <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
                     </div>
-                    <div class="message-body">
-                        <h5>Edem Quistr</h5>
-                        <p class="text-muted">Just woke up bruh</p>
+                    <div class="ingo">
+                        <h3>Full Name</h3>
+                        <small>15 MINUTES AGO</small>
                     </div>
-                </div>
-                <div class="message">
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <div class="message-body">
-                        <h5>Edem Quistr</h5>
-                        <p class="text-muted">Just woke up bruh</p>
-                    </div>
-                </div>
-                <div class="message">
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <div class="message-body">
-                        <h5>Edem Quistr</h5>
-                        <p class="text-muted">Just woke up bruh</p>
-                    </div>
-                </div>
-                <div class="message">
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <div class="message-body">
-                        <h5>Edem Quistr</h5>
-                        <p class="text-muted">Just woke up bruh</p>
-                    </div>
+                    <span class="edit">
+                        <i class="uil uil-ellipsis-h"></i>
+                    </span>
                 </div>
             </div>
 
+            <div class="photo">
+                <img src="https://i.ibb.co/zQBK3YD/feed-5.jpg" />
+            </div>
 
+            <div class="action-buttons">
+                <div class="interaction-buttons">
+                    <span><i class="uil uil-heart"></i></span>
+                    <span><i class="uil uil-comment-dots"></i></span>
+                    <span><i class="uil uil-share-alt"></i></span>
+                </div>
+                <div class="bookmark">
+                    <span><i class="uil uil-bookmark-full"></i></span>
+                </div>
+            </div>
+
+            <div class="liked-by">
+                <span>
+                    <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                </span>
+                <span>
+                    <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                </span>
+                <span>
+                    <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                </span>
+                <p>Liked by <b>Ernset Achiever</b> and <b>2,323 others  </b></p>
+            </div>
+
+            <div class="caption">
+                <p>
+                    <b>Lana Rose</b>Lorem ipsum dolor sit quisquameus.
+                    <span class="harsh-tag">#lifestyle</span>
+                </p>
+            </div>
         </div>
     </div>
-</main>
-
-
-<div class="@(isClickedTheme ? "customize-theme" : "customize-theme-none")">
-    <div class="card">
-
-        <h2>Customize your view</h2>
-        <p>Manage your font size, colorm and background</p>
-
-        <div class="font-size">
-            <h4>Font Size</h4>
-            <div>
-                <h6>Aa</h6>
-                <div class="choose-size">
-                    <span @onclick="()=>ChangeSize(1)" class="@(sizeNumber == 1? "font-size-1 active":"font-size-1")"></span>
-                    <span @onclick="()=>ChangeSize(2)" class="@(sizeNumber == 2? "font-size-2 active":"font-size-2")"></span>
-                    <span @onclick="()=>ChangeSize(3)" class="@(sizeNumber == 3? "font-size-3 active":"font-size-3")"></span>
-                    <span @onclick="()=>ChangeSize(4)" class="@(sizeNumber == 4? "font-size-4 active":"font-size-4")"></span>
-                    <span @onclick="()=>ChangeSize(5)" class="@(sizeNumber == 5? "font-size-5 active":"font-size-5")"></span>
-                </div>
-                <h3>Aa</h3>
-            </div>
-        </div>
-
-        <div class="color">
-            <h4>Color</h4>
-            <div class="choose-color">
-                <span @onclick="()=>ChangeColor(1)" class="@(colorNumber == 1? "color-1 active":"color-1")"></span>
-                <span @onclick="()=>ChangeColor(2)" class="@(colorNumber == 2? "color-2 active":"color-2")"></span>
-                <span @onclick="()=>ChangeColor(3)" class="@(colorNumber == 3? "color-3 active":"color-3")"></span>
-                <span @onclick="()=>ChangeColor(4)" class="@(colorNumber == 4? "color-4 active":"color-4")"></span>
-                <span @onclick="()=>ChangeColor(5)" class="@(colorNumber == 5? "color-5 active":"color-5")"></span>
-            </div>
-        </div>
-
-        <div class="background">
-            <h4>Background</h4>
-            <div class="choose-bg">
-                <div @onclick="()=>ChangeBackground(1)" style="margin-bottom:2px;" class="@(backgroundNumber == 1?"bg-1 active":"bg-1")">
-                    <span></span>
-                    <h5>Light</h5>
-                </div>
-                <div @onclick="()=>ChangeBackground(2)" style="margin-bottom:2px;" class="@(backgroundNumber == 2?"bg-2 active":"bg-2")">
-                    <span></span>
-                    <h5>Dim</h5>
-                </div>
-                <div @onclick="()=>ChangeBackground(3)" style="margin-bottom:2px;" class="@(backgroundNumber == 3?"bg-3 active":"bg-3")">
-                    <span></span>
-                    <h5>Lights Out</h5>
-                </div>
-            </div>
-        </div>
-        <button @onclick="() => ThemeHandle(0)" style="margin-top:1.5rem; font-size:1.8rem;" class="btn-main btn-main-primary ">Save</button>
-    </div>
-
 </div>
+      
+
+
 
 @code{
 
@@ -291,42 +113,14 @@
 
     protected override async Task OnInitializedAsync()
     {
-        //var authState = await _authStateProvider.GetAuthenticationStateAsync();
-        //if(authState.User.Identity.Name == null)
-        //{
-        //    _navManager.NavigateTo("/login");
-
-
-        //}
-    }
-
-    private void ThemeHandle(int action)
-    {
-        if (action == 1)
+        var authState = await _authStateProvider.GetAuthenticationStateAsync();
+        if (authState.User.Identity.Name == null)
         {
-            isClickedTheme = true;
-        }
-        else
-        {
-            isClickedTheme = false;
+            _navManager.NavigateTo("/login");
+
+
         }
     }
 
-    private async Task ChangeSize(int numberOfSize)
-    {
-        sizeNumber = numberOfSize;
-        await _jsRuntime.InvokeVoidAsync("window.changeFontSize", numberOfSize);
-    }
-
-    private async Task ChangeColor(int numberOfColor)
-    {
-        colorNumber = numberOfColor;
-        await _jsRuntime.InvokeVoidAsync("window.changeColorePalete", numberOfColor);
-    }
-
-    private async Task ChangeBackground(int numberOfBackground)
-    {
-        backgroundNumber = numberOfBackground;
-        await _jsRuntime.InvokeVoidAsync("window.changeBackground", numberOfBackground);
-    }
+    
 }

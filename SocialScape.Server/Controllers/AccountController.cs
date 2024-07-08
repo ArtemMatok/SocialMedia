@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Identity;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using SocialScape.Server.Repositories.MediaAccountRep;
 using SocialScape.Shared.Models.AccountAuthntication;
+using SocialScape.Shared.Models.MediaAccountFold;
 using SocialScape.Shared.Result;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -19,12 +21,14 @@ namespace SocialScape.Server.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IConfiguration _configuration;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly IMediaAccountRepository _mediaAccountRepository;
 
-        public AccountController(UserManager<IdentityUser> userManager, IConfiguration configuration, SignInManager<IdentityUser> signInManager)
+        public AccountController(UserManager<IdentityUser> userManager, IConfiguration configuration, SignInManager<IdentityUser> signInManager, IMediaAccountRepository mediaAccountRepository)
         {
             _userManager = userManager;
             _configuration = configuration;
             _signInManager = signInManager;
+            _mediaAccountRepository = mediaAccountRepository;
         }
 
         [HttpPost("Register")]
@@ -34,7 +38,11 @@ namespace SocialScape.Server.Controllers
 
             
             var result = await _userManager.CreateAsync(newUser, model.Password);
-
+            var mediaAccount = new MediaAccount()
+            {
+                Email = newUser.Email
+            };
+            _mediaAccountRepository.Add(mediaAccount);
             if (!result.Succeeded)
             {
                 var errors = result.Errors.Select(x => x.Description);

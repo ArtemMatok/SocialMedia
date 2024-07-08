@@ -1,13 +1,113 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    
+@inject IJSRuntime _jsRuntime
 
+
+
+
+<div class="page">
+   
     <main>
 
-        <body>
-
-            @Body
-
+        <body style="margin-top: -60px;">
+            <nav>
+                <NavComponent />
+            </nav>
+            <main>
+                <div class="container-main">
+                    <div class="left">
+                        <LeftSideComponent OnThemeButtonClick="()=>ThemeHandle(1)" />
+                    </div>
+                    <div class="middle">
+                        @Body
+                    </div>
+                    <div class="right">
+                        <RightSideComponent />
+                    </div>
+                </div>
+            </main>
         </body>
     </main>
+    <div class="@(isClickedTheme ? "customize-theme" : "customize-theme-none")">
+        <div class="card">
+
+            <h2>Customize your view</h2>
+            <p>Manage your font size, colorm and background</p>
+
+
+
+            <div class="color">
+                <h4>Color</h4>
+                <div class="choose-color">
+                    <span @onclick="()=>ChangeColor(1)" class="@(colorNumber == 1? "color-1 active":"color-1")"></span>
+                    <span @onclick="()=>ChangeColor(2)" class="@(colorNumber == 2? "color-2 active":"color-2")"></span>
+                    <span @onclick="()=>ChangeColor(3)" class="@(colorNumber == 3? "color-3 active":"color-3")"></span>
+                    <span @onclick="()=>ChangeColor(4)" class="@(colorNumber == 4? "color-4 active":"color-4")"></span>
+                    <span @onclick="()=>ChangeColor(5)" class="@(colorNumber == 5? "color-5 active":"color-5")"></span>
+                </div>
+            </div>
+
+            <div class="background">
+                <h4>Background</h4>
+                <div class="choose-bg">
+                    <div @onclick="()=>ChangeBackground(1)" style="margin-bottom:2px;" class="@(backgroundNumber == 1?"bg-1 active":"bg-1")">
+                        <span></span>
+                        <h5>Light</h5>
+                    </div>
+                    <div @onclick="()=>ChangeBackground(2)" style="margin-bottom:2px;" class="@(backgroundNumber == 2?"bg-2 active":"bg-2")">
+                        <span></span>
+                        <h5>Dim</h5>
+                    </div>
+                    <div @onclick="()=>ChangeBackground(3)" style="margin-bottom:2px;" class="@(backgroundNumber == 3?"bg-3 active":"bg-3")">
+                        <span></span>
+                        <h5>Lights Out</h5>
+                    </div>
+                </div>
+            </div>
+            <button @onclick="() => ThemeHandle(0)" style="margin-top:1.5rem; font-size:1.8rem;" class="btn-main btn-main-primary ">Save</button>
+        </div>
+
+    </div>
+
 </div>
+
+
+@code{
+    private bool isClickedTheme;
+    private int sizeNumber = 3;
+    private int colorNumber = 5;
+    private int backgroundNumber = 1;
+
+
+
+    private void ThemeHandle(int action)
+    {
+        if (action == 1)
+        {
+            isClickedTheme = true;
+        }
+        else
+        {
+            isClickedTheme = false;
+        }
+    }
+
+   
+
+    private async Task ChangeSize(int numberOfSize)
+    {
+        sizeNumber = numberOfSize;
+        await _jsRuntime.InvokeVoidAsync("window.changeFontSize", numberOfSize);
+    }
+
+    private async Task ChangeColor(int numberOfColor)
+    {
+        colorNumber = numberOfColor;
+        await _jsRuntime.InvokeVoidAsync("window.changeColorePalete", numberOfColor);
+    }
+
+    private async Task ChangeBackground(int numberOfBackground)
+    {
+        backgroundNumber = numberOfBackground;
+        await _jsRuntime.InvokeVoidAsync("window.changeBackground", numberOfBackground);
+    }
+}

@@ -5,6 +5,7 @@
 @inject IJSRuntime _jsRuntime
 
 
+
 <Preload></Preload>
 
 @if (isLodaer)
@@ -57,6 +58,7 @@ else
                         <InputText placeholder="Email" @bind-Value="registerModel.Email" DisplayName="UserName" class="input"></InputText>
                         <ValidationMessage For="()=>registerModel.Email" />
                     </div>
+                  
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <InputText type="password" placeholder="Passwod" @bind-Value="registerModel.Password" DisplayName="Password" class="input"></InputText>
@@ -149,22 +151,30 @@ else
 
     #region Register
     private RegisterModel registerModel = new RegisterModel();
-    private IEnumerable<string> errors;
+    
+    private List<string> errors;
     private bool showErrors;
     private async Task HandleRegistration()
     {
+        isLodaer = true;
         showErrors = false;
 
-        var result = await _authService.Register(registerModel);
 
-        if (result.Successful)
+
+        var result = await _authService.Register(registerModel);
+       
+
+        if (result.Successful )
         {
             isSignUpClick = false;
+            isLodaer = false;
 
         }
         else
         {
-            errors = result.Errors;
+            isLodaer = false;
+            errors.AddRange(result.Errors);
+            
             showErrors = true;
         }
 

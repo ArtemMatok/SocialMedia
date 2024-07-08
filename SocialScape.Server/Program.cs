@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using SocialScape.Server.Data;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using SocialScape.Server.Repositories.MediaAccountRep;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
 
     });
+builder.Services.AddScoped<IMediaAccountRepository, MediaAccountRepository>();
 
 
 var app = builder.Build();
