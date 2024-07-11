@@ -1,62 +1,87 @@
-﻿
-    <a class="profile">
-        <div class="profile-photo">
-            <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-        </div>
-        <div class="handle">
-            <h4>Full Name</h4>
-            <p class="text-muted">@@username</p>
-        </div>
+﻿@inject IMediaAccountService _mediaAccountService
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager _navManager
+
+<a style="cursor:pointer;"  class="profile">
+    <div class="profile-photo">
+        <img src="@mediaAccount.Photo" />
+    </div>
+    <div class="handle">
+        <h4>@mediaAccount.FullName</h4>
+        <p class="text-muted">@@@(mediaAccount.UserName)</p>
+    </div>
+</a>
+
+<div class="sidebar-main">
+    <a class="menu-item active">
+        <span><i class="uil uil-home"></i></span><h3>Home</h3>
     </a>
+    <a class="menu-item ">
+        <span><i class="uil uil-compass"></i></span><h3>Explore</h3>
+    </a>
+    <a class="menu-item ">
+        <span><i class="uil uil-bell" id="notification"><small class="notification-count">9+</small></i></span><h3>Notification</h3>
 
-    <div class="sidebar-main">
-        <a class="menu-item active">
-            <span><i class="uil uil-home"></i></span><h3>Home</h3>
-        </a>
-        <a class="menu-item ">
-            <span><i class="uil uil-compass"></i></span><h3>Explore</h3>
-        </a>
-        <a class="menu-item ">
-            <span><i class="uil uil-bell" id="notification"><small class="notification-count">9+</small></i></span><h3>Notification</h3>
-
-            <div class="notification-popup">
-                <div>
-                    <div class="profile-photo">
-                        <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
-                    </div>
-                    <div class="notifications-body">
-                        <b>Keke Benjamin</b> accepted your friend request
-                        <small class="text-muted">2 DAYS AGO</small>
-                    </div>
+        <div class="notification-popup">
+            <div>
+                <div class="profile-photo">
+                    <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+                </div>
+                <div class="notifications-body">
+                    <b>Keke Benjamin</b> accepted your friend request
+                    <small class="text-muted">2 DAYS AGO</small>
                 </div>
             </div>
-        </a>
-        <a class="menu-item ">
-            <span><i class="uil uil-envelope-alt" id="message"><small class="notification-count">9+</small></i></span><h3>Message</h3>
-        </a>
-        <a class="menu-item ">
-            <span><i class="uil uil-bookmark"></i></span><h3>Bookmark</h3>
-        </a>
-        <a class="menu-item ">
-            <span><i class="uil uil-chart-line"></i></span><h3>Analytics</h3>
-        </a>
-        <a @onclick="ThemeButtonClicked" class="menu-item ">
-            <span><i class="uil uil-palette"></i></span><h3>Theme</h3>
-        </a>
-        <a class="menu-item ">
-            <span><i class="uil uil-setting"></i></span><h3>Settings</h3>
-        </a>
+        </div>
+    </a>
+    <a class="menu-item ">
+        <span><i class="uil uil-envelope-alt" id="message"><small class="notification-count">9+</small></i></span><h3>Message</h3>
+    </a>
+    <a class="menu-item ">
+        <span><i class="uil uil-bookmark"></i></span><h3>Bookmark</h3>
+    </a>
+    <a class="menu-item ">
+        <span><i class="uil uil-chart-line"></i></span><h3>Analytics</h3>
+    </a>
+    <a @onclick="ThemeButtonClicked" class="menu-item ">
+        <span><i class="uil uil-palette"></i></span><h3>Theme</h3>
+    </a>
+    <a @onclick="EditProfileHandle" class="menu-item ">
+        <span><i class="uil uil-setting"></i></span><h3>Settings</h3>
+    </a>
 
-    </div>
+</div>
 
 
 @code{
     [Parameter]
     public EventCallback OnThemeButtonClick { get; set; }
 
+    private MediaAccount mediaAccount = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        var mediaResult = await _mediaAccountService.GetMediaAccountByEmail(user.Identity.Name);
+        if (mediaResult.Successfull)
+        {
+            mediaAccount = mediaResult.mediaAccount;
+        }
+
+    }
+
+
 
     private void ThemeButtonClicked()
     {
         OnThemeButtonClick.InvokeAsync(null);
+    }
+
+    private void EditProfileHandle()
+    {
+        _navManager.NavigateTo($"/editProfile/{mediaAccount.Email}");
     }
 }

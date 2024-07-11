@@ -13,17 +13,27 @@ namespace SocialScape.Client.Services.MediaAccontSer
             _httpClient = httpClient;
         }
 
-        public async Task<MediaAccountResult> CreateMediaAccount(MediaAccount mediaAccount)
+        public async Task<(MediaAccount? mediaAccount, bool Successfull)> GetMediaAccountByEmail(string email)
         {
-            var result =await  _httpClient.PostAsJsonAsync("api/MediaAccount/CreateMediaAccount", mediaAccount);
+            var result = await _httpClient.GetFromJsonAsync<MediaAccount>($"api/MediaAccount/GetMediaAccountByEmail/{email}");
 
-            if (result.IsSuccessStatusCode)
+            if(result is null)
             {
-                return new MediaAccountResult { Successful = true };
+                return (null, false);
+            }
+            return (result, true);  
+        }
+
+        public async Task<bool> UpdateMediaAccount(int id, MediaAccount mediaAccountUpdated)
+        {
+            var result = await _httpClient.PutAsJsonAsync($"api/MediaAccount/UpdateMediaAccount/{id}", mediaAccountUpdated);
+            if(result.IsSuccessStatusCode)
+            {
+                return true;
             }
             else
             {
-                return new MediaAccountResult { Successful = false, Error = "Something went wrong. Try again" };
+                return false;
             }
         }
     }

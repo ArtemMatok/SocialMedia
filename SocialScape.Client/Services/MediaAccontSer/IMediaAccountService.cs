@@ -5,6 +5,7 @@ namespace SocialScape.Client.Services.MediaAccontSer
 {
     public interface IMediaAccountService
     {
-        Task<MediaAccountResult> CreateMediaAccount(MediaAccount mediaAccount);
+        Task<(MediaAccount? mediaAccount, bool Successfull)> GetMediaAccountByEmail(string email);
+        Task<bool> UpdateMediaAccount(int id, MediaAccount mediaAccountUpdated);
     }
 }

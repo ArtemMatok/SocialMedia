@@ -1,4 +1,8 @@
-﻿
+﻿@inject IMediaAccountService _mediaAccountService
+@inject AuthenticationStateProvider _authenticationStateProvider
+
+
+
 <div class="container-main">
     <h2 class="log">
         KozakSpace
@@ -9,10 +13,28 @@
     </div>
     <div class="create">
         <div class="profile-photo">
-            <img src="https://i.ibb.co/59wCg68/profile-8.jpg" />
+            <img src="@mediaAccount.Photo" />
         </div>
         <div>
             <button class="btn-main btn-main-primary"><a style="color:#241E38" href="logout"><h3>Log out</h3></a></button>
         </div>
     </div>
 </div>
+
+@code{
+    private MediaAccount mediaAccount = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        var mediaResult = await _mediaAccountService.GetMediaAccountByEmail(user.Identity.Name);
+        if (mediaResult.Successfull)
+        {
+            mediaAccount = mediaResult.mediaAccount;
+        }
+
+    }
+}

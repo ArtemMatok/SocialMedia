@@ -152,7 +152,7 @@ else
     #region Register
     private RegisterModel registerModel = new RegisterModel();
     
-    private List<string> errors;
+    private IEnumerable<string> errors;
     private bool showErrors;
     private async Task HandleRegistration()
     {
@@ -173,7 +173,7 @@ else
         else
         {
             isLodaer = false;
-            errors.AddRange(result.Errors);
+            errors=result.Errors ;
             
             showErrors = true;
         }

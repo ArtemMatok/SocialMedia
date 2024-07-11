@@ -1,4 +1,5 @@
-﻿using SocialScape.Server.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SocialScape.Server.Data;
 using SocialScape.Shared.Models.MediaAccountFold;
 
 namespace SocialScape.Server.Repositories.MediaAccountRep
@@ -22,6 +23,16 @@ namespace SocialScape.Server.Repositories.MediaAccountRep
         {
             _context.MediaAccounts.Remove(model);
             return Save();
+        }
+
+        public async Task<MediaAccount> GetMediaAccountByEmail(string email)
+        {
+            return await _context.MediaAccounts.FirstOrDefaultAsync(x => x.Email == email);
+        }
+
+        public async Task<MediaAccount> GetMediaAccountById(int id)
+        {
+            return await _context.MediaAccounts.FirstOrDefaultAsync(x => x.MediaAccountId == id);
         }
 
         public bool Save()

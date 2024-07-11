@@ -1,0 +1,140 @@
+﻿@page "/editProfile/{Email}"
+@layout EmptyLayout
+@inject IMediaAccountService _mediaAccountService
+@inject NavigationManager _navManager
+
+<div class="container-edit-profile">
+    <div class="profile-edit">
+        <div class="profile-edit-header">
+            <img src="@mediaAccount.Photo" class="profile-edit-img" />
+            <div class="profile-edit-text-container">
+                <h1 class="profile-edit-title">@mediaAccount.FullName</h1>
+                <p class="profile-edit-email">@mediaAccount.Email</p>
+            </div>
+        </div>
+
+        <div class="menu">
+            <a class="menu-link">
+                <i class="fa-solid fa-circle-user menu-edit-item">Change Photo</i>
+                <InputFile OnChange="UploadImage"></InputFile>
+            </a>
+        </div>
+    </div>
+
+    <EditForm Model="mediaAccount"  class="account" OnValidSubmit="EditHandler">
+        
+        <div class="account-header">
+            <h1 class="account-title">Account Setting</h1>
+            <div class="btn-container">
+                <button class="btn-main btn-main-primary">Save</button>
+                <button class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+
+
+        <div class="account-edit">
+            <div class="input-container">
+                <label>Full name</label>
+                <InputText @bind-Value="@mediaAccount.FullName" class="input-edit" type="text" placeholder="Full Name" />
+                <ValidationMessage For="()=>mediaAccount.FullName"/>
+            </div>
+            <div class="input-container">
+                <label>Username</label>
+                <InputText @bind-Value="@mediaAccount.UserName" class="input-edit" type="text" placeholder="Full Name" />
+                <ValidationMessage For="()=>mediaAccount.UserName" />
+            </div>
+        </div>
+
+        <div class="account-edit">
+            <div class="input-container">
+                <label>Email</label>
+                <InputText @bind-Value="@mediaAccount.Email" class="input-edit" type="text"  placeholder="Email" />
+                <ValidationMessage For="()=>mediaAccount.Email" />
+            </div>
+        </div>
+
+        <div class="account-edit">
+            <div class="input-container">
+                <label>About me</label>
+                <InputTextArea @bind-Value="@mediaAccount.Description" class="textarea-edit" placeholder="About me" />
+                <ValidationMessage For="()=>mediaAccount.Description" />
+            </div>
+        </div>
+    </EditForm>
+    
+
+
+</div>
+<Toasts class="p-3" Messages="messages" Placement="ToastsPlacement.TopCenter" />
+
+@code{
+    [Parameter]
+    public string Email { get; set; }
+
+    private MediaAccount mediaAccount = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var resultMediaAccount = await _mediaAccountService.GetMediaAccountByEmail(Email);
+
+        if(resultMediaAccount.Successfull)
+        {
+            mediaAccount = resultMediaAccount.mediaAccount ;
+        }
+    }
+
+    private async Task EditHandler()
+    {
+        var result = await _mediaAccountService.UpdateMediaAccount(mediaAccount.MediaAccountId, mediaAccount);
+        if(result)
+        {
+            _navManager.NavigateTo($"/");
+        }
+        else
+        {
+            ShowMessage(ToastType.Danger);
+        }
+    }
+
+
+    #region Image
+    private string ImageUploadMessage = "";
+    private async Task UploadImage(InputFileChangeEventArgs e)
+    {
+        // Отримати вибраний файл
+        var imageFile = e.File;
+
+        // Перевірити, чи файл не є порожнім
+        if (imageFile != null)
+        {
+
+            var format = imageFile.ContentType;
+            var resizeImage = await imageFile.RequestImageFileAsync(format, 300, 300);
+            var buffer = new byte[resizeImage.Size];
+            await resizeImage.OpenReadStream().ReadAsync(buffer);
+            var imageData = $"data:{format};base64,{Convert.ToBase64String(buffer)}";
+            ImageUploadMessage = "";
+
+            mediaAccount.Photo = imageData;
+        }
+        else
+        {
+
+            ImageUploadMessage = "File is empty.";
+        }
+    }
+    #endregion
+
+    #region Toast 
+    List<ToastMessage> messages = new List<ToastMessage>();
+
+    private void ShowMessage(ToastType toastType) => messages.Add(CreateToastMessage(toastType));
+
+    private ToastMessage CreateToastMessage(ToastType toastType)
+    => new ToastMessage
+    {
+        Type = toastType,
+        Message = $"Something went wrong.Try again later!",
+    };
+    #endregion
+}

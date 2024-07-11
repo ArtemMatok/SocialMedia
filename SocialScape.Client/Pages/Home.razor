@@ -5,6 +5,7 @@
 
 
 
+
 <div class="middle">
     <div class="stories">
         <div class="story">
@@ -102,6 +103,8 @@
 
 @code{
 
+    //[Parameter]
+    //public string Email { get; set; }
 
 
 
@@ -114,13 +117,15 @@
     protected override async Task OnInitializedAsync()
     {
         var authState = await _authStateProvider.GetAuthenticationStateAsync();
+
         if (authState.User.Identity.Name == null)
         {
             _navManager.NavigateTo("/login");
 
 
         }
+
     }
 
-    
+
 }
