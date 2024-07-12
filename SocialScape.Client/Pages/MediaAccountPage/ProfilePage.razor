@@ -1,0 +1,74 @@
+﻿@page "/profile-page/{Email}"
+@*@layout EmptyLayout*@
+@inject IMediaAccountService _mediaAccountService
+
+<div class="body-profile" style="margin-top:40px">
+    <div class="header-wrapper">
+        @*<header></header>*@
+        <div class="cols-container">
+            <div class="left-col">
+                <div class="img-container">
+                    <img src="@mediaAccount.Photo" />
+                    <span></span>
+                </div>
+                <h2>@mediaAccount.FullName</h2>
+              
+                <p>@@@(mediaAccount.UserName)</p>
+
+                <ul class="about">
+                    <li><span>@(FormatNumberWithSpaces(mediaAccount.Followers.Count()))</span>Folowers</li>
+                    <li><span>@(FormatNumberWithSpaces(mediaAccount.Following.Count()))</span>Folowing</li>
+                    <li><span>0</span>Photos</li>
+                </ul>
+
+                <div class="content-profile">
+                    <p>
+                        @mediaAccount.Description
+                    </p>
+                    <button style="margin-top:3px;" class="btn-main btn-main-primary">Follow</button>
+
+                </div>
+            </div>
+
+            <div class="right-col">
+                
+
+                <div class="photos">
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                    <img src="https://i.ibb.co/f0KGw2w/feed-1.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code{
+    [Parameter]
+    public string Email { get; set; }
+
+    private MediaAccount mediaAccount = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var mediaAccountResult = await _mediaAccountService.GetMediaAccountByEmail(Email);
+        if(mediaAccountResult.Successfull)
+        {
+            mediaAccount = mediaAccountResult.mediaAccount;
+        }
+    }
+
+    private  string FormatNumberWithSpaces(int number)
+    {
+        return number.ToString("N0").Replace(",", " ");
+    }
+
+}

@@ -11,10 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\MediaAccountPage\ProfilePage.razor" />
     <_ContentIncludedByDefault Remove="wwwroot\main.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\MediaAccountPage\ProfilePage.razor" />
     <None Include="wwwroot\img\log.svg" />
     <None Include="wwwroot\img\register.svg" />
     <None Include="wwwroot\main.js" />
@@ -31,6 +33,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SocialScape.Shared\SocialScape.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\MediaAccountPage\ProfilePage.razor" />
   </ItemGroup>
 
 </Project>
