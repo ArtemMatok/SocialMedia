@@ -6,14 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SocialScape.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class PreparingToAuthorization : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "UserAccounts");
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -51,6 +48,23 @@ namespace SocialScape.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MediaAccounts",
+                columns: table => new
+                {
+                    MediaAccountId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MediaAccounts", x => x.MediaAccountId);
                 });
 
             migrationBuilder.CreateTable(
@@ -159,6 +173,50 @@ namespace SocialScape.Server.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "MediaAccountMediaAccount",
+                columns: table => new
+                {
+                    FollowersMediaAccountId = table.Column<int>(type: "int", nullable: false),
+                    FollowingMediaAccountId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MediaAccountMediaAccount", x => new { x.FollowersMediaAccountId, x.FollowingMediaAccountId });
+                    table.ForeignKey(
+                        name: "FK_MediaAccountMediaAccount_MediaAccounts_FollowersMediaAccountId",
+                        column: x => x.FollowersMediaAccountId,
+                        principalTable: "MediaAccounts",
+                        principalColumn: "MediaAccountId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MediaAccountMediaAccount_MediaAccounts_FollowingMediaAccountId",
+                        column: x => x.FollowingMediaAccountId,
+                        principalTable: "MediaAccounts",
+                        principalColumn: "MediaAccountId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Posts",
+                columns: table => new
+                {
+                    PostId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MediaAccountId = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Posts", x => x.PostId);
+                    table.ForeignKey(
+                        name: "FK_Posts_MediaAccounts_MediaAccountId",
+                        column: x => x.MediaAccountId,
+                        principalTable: "MediaAccounts",
+                        principalColumn: "MediaAccountId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -197,6 +255,16 @@ namespace SocialScape.Server.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MediaAccountMediaAccount_FollowingMediaAccountId",
+                table: "MediaAccountMediaAccount",
+                column: "FollowingMediaAccountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_MediaAccountId",
+                table: "Posts",
+                column: "MediaAccountId");
         }
 
         /// <inheritdoc />
@@ -218,25 +286,19 @@ namespace SocialScape.Server.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "MediaAccountMediaAccount");
+
+            migrationBuilder.DropTable(
+                name: "Posts");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
-            migrationBuilder.CreateTable(
-                name: "UserAccounts",
-                columns: table => new
-                {
-                    UserAccountId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserAccounts", x => x.UserAccountId);
-                });
+            migrationBuilder.DropTable(
+                name: "MediaAccounts");
         }
     }
 }

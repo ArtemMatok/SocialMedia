@@ -30,4 +30,8 @@
     <ProjectReference Include="..\SocialScape.Shared\SocialScape.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

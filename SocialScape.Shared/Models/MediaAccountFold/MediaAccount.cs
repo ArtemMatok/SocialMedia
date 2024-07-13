@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialScape.Shared.Models.MediaAccountFold.PostFolder;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,9 +21,8 @@ namespace SocialScape.Shared.Models.MediaAccountFold
         public string Photo { get; set; } = "https://i.ibb.co/rc0fPvM/4cdee02fbf6649b4e2c7b597f9d4d143.jpg";
         public List<MediaAccount> Following { get; set; } = new List<MediaAccount>();
         public List<MediaAccount> Followers { get; set; } = new List<MediaAccount>();
-
-
-
+        public List<Post> Posts { get; set; } = new List<Post>();
+   
 
     }
 }

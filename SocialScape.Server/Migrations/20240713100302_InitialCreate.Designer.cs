@@ -12,8 +12,8 @@ using SocialScape.Server.Data;
 namespace SocialScape.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240708072954_Update_MediaAccount")]
-    partial class Update_MediaAccount
+    [Migration("20240713100302_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,21 @@ namespace SocialScape.Server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("MediaAccountMediaAccount", b =>
+                {
+                    b.Property<int>("FollowersMediaAccountId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FollowingMediaAccountId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FollowersMediaAccountId", "FollowingMediaAccountId");
+
+                    b.HasIndex("FollowingMediaAccountId");
+
+                    b.ToTable("MediaAccountMediaAccount");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -239,6 +254,10 @@ namespace SocialScape.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -254,6 +273,47 @@ namespace SocialScape.Server.Migrations
                     b.HasKey("MediaAccountId");
 
                     b.ToTable("MediaAccounts");
+                });
+
+            modelBuilder.Entity("SocialScape.Shared.Models.MediaAccountFold.PostFolder.Post", b =>
+                {
+                    b.Property<int>("PostId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostId"));
+
+                    b.Property<int>("MediaAccountId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Photo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PostId");
+
+                    b.HasIndex("MediaAccountId");
+
+                    b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("MediaAccountMediaAccount", b =>
+                {
+                    b.HasOne("SocialScape.Shared.Models.MediaAccountFold.MediaAccount", null)
+                        .WithMany()
+                        .HasForeignKey("FollowersMediaAccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SocialScape.Shared.Models.MediaAccountFold.MediaAccount", null)
+                        .WithMany()
+                        .HasForeignKey("FollowingMediaAccountId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -305,6 +365,22 @@ namespace SocialScape.Server.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SocialScape.Shared.Models.MediaAccountFold.PostFolder.Post", b =>
+                {
+                    b.HasOne("SocialScape.Shared.Models.MediaAccountFold.MediaAccount", "MediaAccount")
+                        .WithMany("Posts")
+                        .HasForeignKey("MediaAccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MediaAccount");
+                });
+
+            modelBuilder.Entity("SocialScape.Shared.Models.MediaAccountFold.MediaAccount", b =>
+                {
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }
