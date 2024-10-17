@@ -1,0 +1,15 @@
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\bin\Debug\net8.0\Data.deps.json
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\bin\Debug\net8.0\Data.runtimeconfig.json
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\bin\Debug\net8.0\Data.dll
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\bin\Debug\net8.0\Data.pdb
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.csproj.AssemblyReference.cache
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.AssemblyInfoInputs.cache
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.AssemblyInfo.cs
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.csproj.CoreCompileInputs.cache
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.sourcelink.json
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.dll
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\refint\Data.dll
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.pdb
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\Data.genruntimeconfig.cache
+D:\Monix_SocialMedia\SocialMedia\backend\DLL\obj\Debug\net8.0\ref\Data.dll

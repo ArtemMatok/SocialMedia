@@ -1,0 +1,16 @@
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\bin\Debug\net8.0\Businness.deps.json
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\bin\Debug\net8.0\Businness.dll
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\bin\Debug\net8.0\Businness.pdb
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.csproj.AssemblyReference.cache
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.GeneratedMSBuildEditorConfig.editorconfig
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.AssemblyInfoInputs.cache
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.AssemblyInfo.cs
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.csproj.CoreCompileInputs.cache
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.sourcelink.json
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.dll
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\refint\Businness.dll
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.pdb
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\ref\Businness.dll
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\bin\Debug\net8.0\Data.dll
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\bin\Debug\net8.0\Data.pdb
+D:\Monix_SocialMedia\SocialMedia\backend\BLL\obj\Debug\net8.0\Businness.csproj.Up2Date
