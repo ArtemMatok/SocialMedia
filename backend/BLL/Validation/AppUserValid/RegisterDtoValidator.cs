@@ -21,7 +21,7 @@ namespace Businness.Validation.AppUserValid
                  .MinimumLength(2).WithMessage("User name must be more than 2 symbols");
             RuleFor(x => x.Password)
                .NotEmpty().WithMessage("Password is required")
-               .MinimumLength(6).WithMessage("Password must be at least 8 characters long ")
+               .MinimumLength(8).WithMessage("Password must be at least 8 characters long ")
                .Matches(@"[A-Za-z]").WithMessage("Password must contain at least one letter")
                .Matches(@"[@#$]").WithMessage("Password must contain at least one special character (@, #, $)");
 

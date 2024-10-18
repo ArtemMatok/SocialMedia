@@ -17,9 +17,28 @@ namespace Data.Data
 
         }
 
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Save> Saves { get; set; }  
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+
+            builder.Entity<Post>()
+                .HasIndex(x => x.PostCaption);
+
+            builder.Entity<Post>()
+                .HasMany(x => x.Likes)
+                .WithMany(u => u.LikedPosts)
+                .UsingEntity(x => x.ToTable("UserLikePost"));
+
+            builder.Entity<AppUser>()
+                .HasMany(x => x.Posts)
+                .WithOne(p => p.User)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
             List<IdentityRole> roles = new List<IdentityRole>()
             {

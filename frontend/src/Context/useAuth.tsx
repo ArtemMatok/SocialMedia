@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 type UserContextType = {
+  loading:boolean,
   user: UserProfile | null;
   token: string | null;
   registerUser: (
@@ -29,6 +30,7 @@ export const UserProvider = ({ children }: Props) => {
   const [token, setToken] = useState<string | null>(null);
   const [user, setUser] = useState<UserProfile | null>(null);
   const [isReady, setIsReady] = useState<boolean>(false);
+  const[loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -49,6 +51,7 @@ export const UserProvider = ({ children }: Props) => {
     password: string
   ) => {
     try {
+      setLoading(true);
       const data = await register(name, userName, email, password);
       if (data) {
         localStorage.setItem("token", data.token);
@@ -60,15 +63,20 @@ export const UserProvider = ({ children }: Props) => {
         setToken(data.token!);
         setUser(userObj!);
         toast.success("Register Success!");
-        navigate("/home");
+        setLoading(false);
+        navigate("/");
+        
+      }else{
+        setLoading(false);
       }
     } catch (error) {
-      toast.error(error as string);
+      console.log("Register error:",error);
     }
   };
 
   const loginUser = async (userName: string, password: string) => {
     try {
+      setLoading(true);
       const data = await login(userName, password);
       if (data) {
         localStorage.setItem("token", data.token);
@@ -80,11 +88,13 @@ export const UserProvider = ({ children }: Props) => {
         setToken(data.token!);
         setUser(userObj!);
         toast.success("Login Success!");
-
-        navigate("/home");
+        setLoading(false);
+        navigate("/");
+      }else{
+        setLoading(false);
       }
     } catch (error) {
-      toast.error(error as string);
+      console.log("Login error:",error);
     }
   };
 
@@ -102,7 +112,7 @@ export const UserProvider = ({ children }: Props) => {
 
   return (
     <UserContext.Provider
-      value={{ loginUser, user, token, logout, isLoggedIn, registerUser }}
+      value={{ loginUser, user, token, logout, isLoggedIn, registerUser, loading }}
     >
       {isReady ? children : null}
     </UserContext.Provider>

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241017101835_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241018114938_Update_Post_Likes")]
+    partial class Update_Post_Likes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,21 @@ namespace Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("AppUserPost", b =>
+                {
+                    b.Property<int>("LikedPostsPostId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LikesId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LikedPostsPostId", "LikesId");
+
+                    b.HasIndex("LikesId");
+
+                    b.ToTable("UserLikePost", (string)null);
+                });
 
             modelBuilder.Entity("Data.Models.AppUser", b =>
                 {
@@ -94,6 +109,43 @@ namespace Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Data.Models.Post", b =>
+                {
+                    b.Property<int>("PostId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostId"));
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostCaption")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Tags")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("PostId");
+
+                    b.HasIndex("PostCaption");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Posts");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -123,13 +175,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2e2bb169-e05a-492e-a6b8-aeebdb6beaaf",
+                            Id = "e4aea9f4-95fa-4a61-82f6-0fa282998212",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "76a13b7b-14ab-4aee-b01b-bfb1e0155141",
+                            Id = "68faad70-78ba-4b52-abb0-fd417b6f80d1",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -241,6 +293,32 @@ namespace Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("AppUserPost", b =>
+                {
+                    b.HasOne("Data.Models.Post", null)
+                        .WithMany()
+                        .HasForeignKey("LikedPostsPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Data.Models.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("LikesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Data.Models.Post", b =>
+                {
+                    b.HasOne("Data.Models.AppUser", "User")
+                        .WithMany("Posts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -290,6 +368,11 @@ namespace Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Data.Models.AppUser", b =>
+                {
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

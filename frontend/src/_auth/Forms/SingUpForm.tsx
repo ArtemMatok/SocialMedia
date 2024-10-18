@@ -21,8 +21,8 @@ import { useAuth } from "@/Context/useAuth";
 type Props = {};
 
 const SingUpForm = (props: Props) => {
-    const isLoading = false;
-    const{registerUser} = useAuth();
+
+    const{registerUser, loading} = useAuth();
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
@@ -37,7 +37,7 @@ const SingUpForm = (props: Props) => {
   const onSubmit = async (values:z.infer<typeof SignupValidation>) => {
     const newUser = await registerUser(values.name,values.userName,values.email,values.password);
 
-    console.log(newUser);
+
   };
   return (
     <div>
@@ -67,7 +67,7 @@ const SingUpForm = (props: Props) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Full Name</FormLabel>
                   <FormControl>
                     <Input type="text" className="shad-input" {...field} />
                   </FormControl>
@@ -115,7 +115,7 @@ const SingUpForm = (props: Props) => {
               )}
             />
             <Button type="submit" className="shad-button_primary">
-                {isLoading ? (
+                {loading ? (
                     <div className="flex-center gap-2">
                        <Loader />Loading
                     </div>

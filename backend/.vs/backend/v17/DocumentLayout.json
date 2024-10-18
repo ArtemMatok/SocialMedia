@@ -7,16 +7,43 @@
       "RelativeMoniker": "D:0:0:{B2FF6774-5A6B-44DF-AB1B-59D86F3B1334}|API\\API.csproj|solutionrelative:api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\models\\save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\models\\save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/Monix/True/SqlTable/dbo.UserLikePost.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2FF6774-5A6B-44DF-AB1B-59D86F3B1334}|API\\API.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B2FF6774-5A6B-44DF-AB1B-59D86F3B1334}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018103027_Add_Post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DLL\\Migrations\\20241018103027_Add_Post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018102958_Add_Post_.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DLL\\Migrations\\20241018102958_Add_Post_.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{410600E9-06FB-4ED0-9AD9-2A555CCD16DB}|BLL\\Businness.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\bll\\dtos\\appuserdtos\\newuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{410600E9-06FB-4ED0-9AD9-2A555CCD16DB}|BLL\\Businness.csproj|solutionrelative:bll\\dtos\\appuserdtos\\newuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2FF6774-5A6B-44DF-AB1B-59D86F3B1334}|API\\API.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2FF6774-5A6B-44DF-AB1B-59D86F3B1334}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2FF6774-5A6B-44DF-AB1B-59D86F3B1334}|API\\API.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B2FF6774-5A6B-44DF-AB1B-59D86F3B1334}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{410600E9-06FB-4ED0-9AD9-2A555CCD16DB}|BLL\\Businness.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\bll\\dtos\\appuserdtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,14 +74,6 @@
       "RelativeMoniker": "D:0:0:{410600E9-06FB-4ED0-9AD9-2A555CCD16DB}|BLL\\Businness.csproj|solutionrelative:bll\\interfaces\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
@@ -67,8 +86,12 @@
       "RelativeMoniker": "D:0:0:{B2FF6774-5A6B-44DF-AB1B-59D86F3B1334}|API\\API.csproj|solutionrelative:api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\migrations\\20241017101835_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\migrations\\20241017101835_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\migrations\\20241018125835_add_saves_update_users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\migrations\\20241018125835_add_saves_update_users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|d:\\monix_socialmedia\\socialmedia\\backend\\dll\\migrations\\20241018103126_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{307FD6C7-CDDA-4052-A7F8-C4D46E2872F5}|DLL\\Data.csproj|solutionrelative:dll\\migrations\\20241018103126_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +101,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,46 +133,138 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DLL\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DLL\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAgwBQAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:04:27.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "DLL\\Models\\AppUser.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Models\\AppUser.cs",
+              "RelativeToolTip": "DLL\\Models\\AppUser.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAwwA0AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:04:28.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Save.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Models\\Save.cs",
+              "RelativeDocumentMoniker": "DLL\\Models\\Save.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Models\\Save.cs",
+              "RelativeToolTip": "DLL\\Models\\Save.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwAgAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T09:51:10.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.UserLikePost [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/Monix/True/SqlTable/dbo.UserLikePost.sql",
+              "ToolTip": "dbo.UserLikePost [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-18T11:50:20.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Post.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "DLL\\Models\\Post.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Models\\Post.cs",
+              "RelativeToolTip": "DLL\\Models\\Post.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAxwBUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T09:48:38.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "20241018103126_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018103126_InitialCreate.cs",
+              "RelativeDocumentMoniker": "DLL\\Migrations\\20241018103126_InitialCreate.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018103126_InitialCreate.cs",
+              "RelativeToolTip": "DLL\\Migrations\\20241018103126_InitialCreate.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T10:31:26.569Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\AccountController.cs",
               "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\Controllers\\AccountController.cs",
               "RelativeToolTip": "API\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAAwGkAAAARAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAuwB4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-17T12:40:51.459Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 21,
+              "Title": "20241018125835_Add_Saves_Update_Users.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018125835_Add_Saves_Update_Users.cs",
+              "RelativeDocumentMoniker": "DLL\\Migrations\\20241018125835_Add_Saves_Update_Users.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018125835_Add_Saves_Update_Users.cs",
+              "RelativeToolTip": "DLL\\Migrations\\20241018125835_Add_Saves_Update_Users.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T12:58:35.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20241018103027_Add_Post.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018103027_Add_Post.cs",
+              "RelativeDocumentMoniker": "DLL\\Migrations\\20241018103027_Add_Post.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018103027_Add_Post.cs",
+              "RelativeToolTip": "DLL\\Migrations\\20241018103027_Add_Post.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T10:30:27.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20241018102958_Add_Post_.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018102958_Add_Post_.cs",
+              "RelativeDocumentMoniker": "DLL\\Migrations\\20241018102958_Add_Post_.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241018102958_Add_Post_.cs",
+              "RelativeToolTip": "DLL\\Migrations\\20241018102958_Add_Post_.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T10:29:59.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\appsettings.json",
               "RelativeDocumentMoniker": "API\\appsettings.json",
               "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\appsettings.json",
               "RelativeToolTip": "API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAADmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-17T10:14:49.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T10:14:49.093Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RegisterDtoValidator.cs",
-              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Validation\\AppUserValid\\RegisterDtoValidator.cs",
-              "RelativeDocumentMoniker": "BLL\\Validation\\AppUserValid\\RegisterDtoValidator.cs",
-              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Validation\\AppUserValid\\RegisterDtoValidator.cs",
-              "RelativeToolTip": "BLL\\Validation\\AppUserValid\\RegisterDtoValidator.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAowAoAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:55:46.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "MapperProfile.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Mapper\\MapperProfile.cs",
               "RelativeDocumentMoniker": "BLL\\Mapper\\MapperProfile.cs",
@@ -157,12 +272,11 @@
               "RelativeToolTip": "BLL\\Mapper\\MapperProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:51:05.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T10:51:05.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "LoginDtoValidator.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Validation\\AppUserValid\\LoginDtoValidator.cs",
               "RelativeDocumentMoniker": "BLL\\Validation\\AppUserValid\\LoginDtoValidator.cs",
@@ -170,12 +284,11 @@
               "RelativeToolTip": "BLL\\Validation\\AppUserValid\\LoginDtoValidator.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAowBcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:52:18.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T10:52:18.701Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\DTOs\\AppUserDtos\\LoginDto.cs",
               "RelativeDocumentMoniker": "BLL\\DTOs\\AppUserDtos\\LoginDto.cs",
@@ -183,12 +296,23 @@
               "RelativeToolTip": "BLL\\DTOs\\AppUserDtos\\LoginDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:22:07.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T10:22:07.863Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
+              "Title": "RegisterDtoValidator.cs",
+              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Validation\\AppUserValid\\RegisterDtoValidator.cs",
+              "RelativeDocumentMoniker": "BLL\\Validation\\AppUserValid\\RegisterDtoValidator.cs",
+              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Validation\\AppUserValid\\RegisterDtoValidator.cs",
+              "RelativeToolTip": "BLL\\Validation\\AppUserValid\\RegisterDtoValidator.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAowAoAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:55:46.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\DTOs\\AppUserDtos\\RegisterDto.cs",
               "RelativeDocumentMoniker": "BLL\\DTOs\\AppUserDtos\\RegisterDto.cs",
@@ -200,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "NewUserDto.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\DTOs\\AppUserDtos\\NewUserDto.cs",
               "RelativeDocumentMoniker": "BLL\\DTOs\\AppUserDtos\\NewUserDto.cs",
@@ -208,12 +332,11 @@
               "RelativeToolTip": "BLL\\DTOs\\AppUserDtos\\NewUserDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:24:43.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T10:24:43.683Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\Program.cs",
               "RelativeDocumentMoniker": "API\\Program.cs",
@@ -221,12 +344,11 @@
               "RelativeToolTip": "API\\Program.cs",
               "ViewState": "AQIAADkAAAAAAAAAAAAcwEMAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:15:15.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T10:15:15.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "ITokenService.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Interfaces\\ITokenService.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\ITokenService.cs",
@@ -238,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\TokenService.cs",
@@ -250,43 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "20241017101835_InitialCreate.cs",
-              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241017101835_InitialCreate.cs",
-              "RelativeDocumentMoniker": "DLL\\Migrations\\20241017101835_InitialCreate.cs",
-              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Migrations\\20241017101835_InitialCreate.cs",
-              "RelativeToolTip": "DLL\\Migrations\\20241017101835_InitialCreate.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:18:35.801Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "DLL\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "DLL\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:04:27.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Models\\AppUser.cs",
-              "RelativeDocumentMoniker": "DLL\\Models\\AppUser.cs",
-              "ToolTip": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Models\\AppUser.cs",
-              "RelativeToolTip": "DLL\\Models\\AppUser.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAASwAsAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:04:28.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "Data.csproj",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\DLL\\Data.csproj",
               "RelativeDocumentMoniker": "DLL\\Data.csproj",
@@ -298,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "Businness.csproj",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\BLL\\Businness.csproj",
               "RelativeDocumentMoniker": "BLL\\Businness.csproj",
@@ -310,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "API.csproj",
               "DocumentMoniker": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\API.csproj",
               "RelativeDocumentMoniker": "API\\API.csproj",

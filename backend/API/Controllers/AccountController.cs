@@ -31,6 +31,8 @@ namespace API.Controllers
         {
             try
             {
+
+
                 ValidationResult resultValidation = await validator.ValidateAsync(registerDto);
                 if (!resultValidation.IsValid)
                 {
@@ -73,7 +75,6 @@ namespace API.Controllers
             }
             catch (Exception e)
             {
-
                 return StatusCode(500, e.Message);
             }
         }
@@ -91,14 +92,14 @@ namespace API.Controllers
 
             if (user is null)
             {
-                return Unauthorized("Invalid Email");
+                return Unauthorized("Invalid user name");
             }
 
             var result = await _signingManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
 
             if (!result.Succeeded)
             {
-                return Unauthorized("Email not found and/or password incorrect");
+                return Unauthorized("User name not found and/or password incorrect");
             }
 
             return Ok(

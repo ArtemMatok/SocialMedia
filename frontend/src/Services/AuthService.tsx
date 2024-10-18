@@ -1,24 +1,51 @@
 import { LoginDto, RegisterDto, UserProfileToken } from "@/Models/AppUser";
 import axios from "axios";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
-const api = "http://localhost:5146/api/Account/"
+const api = "http://localhost:5146/api/Account/";
 
-export const register = async (name:string,userName:string, email:string, password:string) => {
-    try {
-        const data = await axios.post<UserProfileToken>(api + "Register",{name, userName, email, password})
-        return data.data;
-    } catch (error) {
-        toast.error(error as string);
+export const register = async (
+  name: string,
+  userName: string,
+  email: string,
+  password: string
+) => {
+  try {
+    const data = await axios.post<UserProfileToken>(api + "Register", {
+      name,
+      userName,
+      email,
+      password,
+    });
+    return data.data;
+  } catch (error: any) {
+    if (error.response) {
+      toast.error(`${error.response ? error.response.data :  error.response}`);
+    } else {
+    
+      toast.error("Something went wrong...");
     }
-}
+  }
+};
 
-export const login = async(userName:string, password:string) =>{
+export const login = async (userName: string, password: string) => {
     try {
-        const data = await axios.post<UserProfileToken>(api + "Login", {userName, password});
-
-        return data.data;
-    } catch (error) {
-        toast.error(error as string);
+      const response = await axios.post<UserProfileToken>(api + "Login", {
+        userName,
+        password,
+      });
+  
+      if (response.status === 200) {
+        return response.data;
+      }
+    } catch (error: any) {
+      if (error.response) {
+        // Axios спіймав помилкову відповідь від сервера
+        toast.error(`${error.response.data} `);
+      } else {
+        // Обробка інших помилок, не пов'язаних з відповіддю сервера
+        toast.error(error.message);
+      }
     }
-}
+  };
+  

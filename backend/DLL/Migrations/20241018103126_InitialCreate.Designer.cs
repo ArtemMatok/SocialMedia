@@ -4,6 +4,7 @@ using Data.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241018103126_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,21 +25,6 @@ namespace Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AppUserPost", b =>
-                {
-                    b.Property<int>("LikedPostsPostId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("LikesId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("LikedPostsPostId", "LikesId");
-
-                    b.HasIndex("LikesId");
-
-                    b.ToTable("UserLikePost", (string)null);
-                });
-
             modelBuilder.Entity("Data.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -44,10 +32,6 @@ namespace Data.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
-
-                    b.Property<string>("Bio")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -60,7 +44,7 @@ namespace Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Image")
+                    b.Property<string>("LikedPostsId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -126,6 +110,10 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("LikesId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -149,30 +137,6 @@ namespace Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Posts");
-                });
-
-            modelBuilder.Entity("Data.Models.Save", b =>
-                {
-                    b.Property<int>("SaveId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SaveId"));
-
-                    b.Property<string>("AppUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("PostId")
-                        .HasColumnType("int");
-
-                    b.HasKey("SaveId");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("PostId");
-
-                    b.ToTable("Saves");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -204,13 +168,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "74051a82-9ba6-4ab7-8f67-b53ed885c46a",
+                            Id = "9af267b9-27ad-4feb-853a-ede4eee37466",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "205091ab-1d78-47ff-9924-7f203a67707e",
+                            Id = "273e3eb7-257d-4dea-b90b-44017f72c246",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -322,47 +286,13 @@ namespace Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AppUserPost", b =>
-                {
-                    b.HasOne("Data.Models.Post", null)
-                        .WithMany()
-                        .HasForeignKey("LikedPostsPostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Data.Models.AppUser", null)
-                        .WithMany()
-                        .HasForeignKey("LikesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Data.Models.Post", b =>
                 {
                     b.HasOne("Data.Models.AppUser", "User")
                         .WithMany("Posts")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Data.Models.Save", b =>
-                {
-                    b.HasOne("Data.Models.AppUser", "User")
-                        .WithMany("Saves")
-                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Data.Models.Post", "Post")
-                        .WithMany("Saves")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Post");
 
                     b.Navigation("User");
                 });
@@ -421,13 +351,6 @@ namespace Data.Migrations
             modelBuilder.Entity("Data.Models.AppUser", b =>
                 {
                     b.Navigation("Posts");
-
-                    b.Navigation("Saves");
-                });
-
-            modelBuilder.Entity("Data.Models.Post", b =>
-                {
-                    b.Navigation("Saves");
                 });
 #pragma warning restore 612, 618
         }
