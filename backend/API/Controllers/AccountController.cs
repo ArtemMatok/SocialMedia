@@ -31,8 +31,6 @@ namespace API.Controllers
         {
             try
             {
-
-
                 ValidationResult resultValidation = await validator.ValidateAsync(registerDto);
                 if (!resultValidation.IsValid)
                 {
