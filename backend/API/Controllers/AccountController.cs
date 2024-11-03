@@ -1,5 +1,6 @@
 ﻿using Businness.DTOs.AppUserDtos;
 using Businness.Interfaces;
+using Data.Helpers;
 using Data.Models;
 using FluentValidation;
 using FluentValidation.Results;
@@ -17,13 +18,14 @@ namespace API.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
         private readonly SignInManager<AppUser> _signingManager;
+        private readonly IUserService _userService;
 
-
-        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, SignInManager<AppUser> signingManager)
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, SignInManager<AppUser> signingManager, IUserService userService)
         {
             _userManager = userManager;
             _tokenService = tokenService;
             _signingManager = signingManager;
+            _userService = userService;
         }
 
         [HttpPost("Register")]
@@ -31,20 +33,16 @@ namespace API.Controllers
         {
             try
             {
-                ValidationResult resultValidation = await validator.ValidateAsync(registerDto);
-                if (!resultValidation.IsValid)
-                {
-                    return BadRequest(resultValidation.Errors);
-                }
-
 
                 var appUser = new AppUser
                 {
-                  
                     UserName = registerDto.UserName,
                     Email = registerDto.Email,
                     Name = registerDto.Name,
                 };
+                var initials = ImageGenerator.GetInitials(appUser.Name);
+                string randomColor = ImageGenerator.GenerateRandomColor();
+                appUser.Image = $"https://ui-avatars.com/api/?name={initials}&size=200&background={randomColor}&color=000000";
 
                 var createdUser = await _userManager.CreateAsync(appUser, registerDto.Password);
 
@@ -55,7 +53,8 @@ namespace API.Controllers
                     {
                         return Ok(new NewUserDto()
                         {
-                            Username = appUser.UserName,
+                          
+                            UserName = appUser.UserName,
                             Email = appUser.Email,
                             Token = _tokenService.CreateToken(appUser)
                         });
@@ -80,12 +79,6 @@ namespace API.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDto loginDto, [FromServices] IValidator<LoginDto> validator)
         {
-            ValidationResult resultValidation = await validator.ValidateAsync(loginDto);
-            if (!resultValidation.IsValid)
-            {
-                return BadRequest(resultValidation.Errors);
-            }
-
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == loginDto.UserName);
 
             if (user is null)
@@ -103,13 +96,30 @@ namespace API.Controllers
             return Ok(
                 new NewUserDto
                 {
-                    Username = user.UserName,
+                  
+                    UserName = user.UserName,
                     Email = user.Email,
                     Token = _tokenService.CreateToken(user)
                 }
             );
         }
 
+        [HttpGet("GetUserByUserName/{userName}")]
+        public async Task<IActionResult> GetUserByUserName(string userName)
+        {
+            if (userName is null)
+            {
+                return BadRequest("User name is required");
+            }
 
+            var user = await _userService.GetUserByUserName(userName);
+
+            if(user is null)
+            {
+                return NotFound("User wasn`t found");
+            }
+
+            return Ok(user);
+        }
     }
 }

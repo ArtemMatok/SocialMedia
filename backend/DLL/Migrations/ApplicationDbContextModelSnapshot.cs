@@ -159,18 +159,18 @@ namespace Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SaveId"));
 
-                    b.Property<string>("AppUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("PostId")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("SaveId");
 
-                    b.HasIndex("AppUserId");
-
                     b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Saves");
                 });
@@ -204,13 +204,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "74051a82-9ba6-4ab7-8f67-b53ed885c46a",
+                            Id = "7c5f1b16-2179-4e80-821d-2f21c54e934f",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "205091ab-1d78-47ff-9924-7f203a67707e",
+                            Id = "2293b067-5af0-4755-b313-f72f0f42632b",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -350,15 +350,15 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Models.Save", b =>
                 {
-                    b.HasOne("Data.Models.AppUser", "User")
-                        .WithMany("Saves")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Data.Models.Post", "Post")
                         .WithMany("Saves")
                         .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Data.Models.AppUser", "User")
+                        .WithMany("Saves")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

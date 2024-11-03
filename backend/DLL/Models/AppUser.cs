@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Data.Helpers;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Data.Models
     public class AppUser : IdentityUser
     {
         public string Name { get; set; }
-        public string Image { get; set; } = "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg";
+        public string Image { get; set; } = String.Empty;
         public string Bio { get; set; } = String.Empty;
 
         //Relation

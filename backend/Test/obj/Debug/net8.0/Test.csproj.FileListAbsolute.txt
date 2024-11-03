@@ -147,9 +147,6 @@ D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win-arm\
 D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
@@ -171,3 +168,6 @@ D:\Monix_SocialMedia\SocialMedia\backend\Test\obj\Debug\net8.0\refint\Test.dll
 D:\Monix_SocialMedia\SocialMedia\backend\Test\obj\Debug\net8.0\Test.pdb
 D:\Monix_SocialMedia\SocialMedia\backend\Test\obj\Debug\net8.0\Test.genruntimeconfig.cache
 D:\Monix_SocialMedia\SocialMedia\backend\Test\obj\Debug\net8.0\ref\Test.dll
+D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+d:\Monix_SocialMedia\SocialMedia\backend\Test\bin\Debug\net8.0\API.staticwebassets.runtime.json

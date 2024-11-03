@@ -11,7 +11,7 @@ namespace Data.Models
         public int SaveId { get; set; }
 
         //Relation
-        public string AppUserId { get; set; }
+        public string UserId { get; set; }
         public AppUser User { get; set; }
         public int PostId { get; set; } 
         public Post Post { get; set; }  

@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\images\\ba59946a-6723-415f-8af4-07ed19e96422_avatar.png",
+      "PackagePath": "staticwebassets\\images\\ba59946a-6723-415f-8af4-07ed19e96422_avatar.png"
+    },
+    {
+      "Id": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\images\\d24127e9-d009-406c-976e-b530d3adf695_avatar.png",
+      "PackagePath": "staticwebassets\\images\\d24127e9-d009-406c-976e-b530d3adf695_avatar.png"
+    },
+    {
+      "Id": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\images\\e86b1270-abca-46b7-9520-33afeffcb9f2_avatar.png",
+      "PackagePath": "staticwebassets\\images\\e86b1270-abca-46b7-9520-33afeffcb9f2_avatar.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.API.props",
+      "PackagePath": "build\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.API.props",
+      "PackagePath": "buildMultiTargeting\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.API.props",
+      "PackagePath": "buildTransitive\\API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

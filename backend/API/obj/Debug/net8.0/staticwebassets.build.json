@@ -1,11 +1,77 @@
 {
   "Version": 1,
-  "Hash": "bUm1vPqwZHJejLhtNIB7WgmMI8ngxypkYrDApg4MvgQ=",
+  "Hash": "LTL6OfM2rhiCRjMhkaOGhztGQ0syswcAyxTbTm1UQMM=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "API\\wwwroot",
+      "Source": "API",
+      "ContentRoot": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\",
+      "BasePath": "_content/API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\images\\ba59946a-6723-415f-8af4-07ed19e96422_avatar.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/ba59946a-6723-415f-8af4-07ed19e96422_avatar.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ba59946a-6723-415f-8af4-07ed19e96422_avatar.png"
+    },
+    {
+      "Identity": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\images\\d24127e9-d009-406c-976e-b530d3adf695_avatar.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/d24127e9-d009-406c-976e-b530d3adf695_avatar.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d24127e9-d009-406c-976e-b530d3adf695_avatar.png"
+    },
+    {
+      "Identity": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\images\\e86b1270-abca-46b7-9520-33afeffcb9f2_avatar.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/e86b1270-abca-46b7-9520-33afeffcb9f2_avatar.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\e86b1270-abca-46b7-9520-33afeffcb9f2_avatar.png"
+    }
+  ]
 }

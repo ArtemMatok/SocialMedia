@@ -10,6 +10,8 @@ using Businness.Validation.AppUserValid;
 using Businness.Mapper;
 using Businness.Interfaces;
 using Businness.Services;
+using Data.Repositories;
+using Data.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,7 +68,9 @@ builder.Services.AddValidatorsFromAssemblyContaining<LoginDtoValidator>();
 
 //Service
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IUserService, UserService>();
 //Repository
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\API.csproj": {}
+    "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\API.csproj": {}
   },
   "projects": {
-    "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\API.csproj": {
+    "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\API.csproj",
+        "projectUniqueName": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\API.csproj",
+        "projectPath": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\API.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\API\\obj\\",
+        "outputPath": "D:\\Monix_SocialMedia\\SocialMedia\\backend\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\c++\\NuGetPackages"
@@ -275,6 +275,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "System.Drawing.Common": {
               "target": "Package",
               "version": "[8.0.10, )"
             }

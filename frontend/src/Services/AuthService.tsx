@@ -1,4 +1,4 @@
-import { LoginDto, RegisterDto, UserProfileToken } from "@/Models/AppUser";
+import { LoginDto, RegisterDto, UserFullDto, UserProfileToken } from "@/Models/AppUser";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -49,3 +49,13 @@ export const login = async (userName: string, password: string) => {
     }
   };
   
+export const getUserByUserName = async(userName:string) => {
+  try {
+    const data = await axios.get<UserFullDto>(api + `GetUserByUserName/${userName}`)
+    if(data){
+      return data.data;
+    }
+  } catch (error:any) {
+    console.log("getUserByUserName error:",error.response.data)
+  }
+}

@@ -277,6 +277,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[8.0.10, )"
             }
           },
           "imports": [
@@ -362,6 +366,10 @@
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.12.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

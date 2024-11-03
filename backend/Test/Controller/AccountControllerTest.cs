@@ -1,6 +1,7 @@
 ﻿using API.Controllers;
 using Businness.DTOs.AppUserDtos;
 using Businness.Interfaces;
+using Businness.Services;
 using Data.Models;
 using FakeItEasy;
 using FluentAssertions;
@@ -25,6 +26,7 @@ namespace Test.Controller
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IValidator<RegisterDto> _validatorRegister;
         private readonly IValidator<LoginDto> _validatorLogin;
+        private readonly IUserService _userService;
         public AccountControllerTest()
         {
             _userManager = A.Fake<UserManager<AppUser>>();
@@ -32,6 +34,7 @@ namespace Test.Controller
             _signInManager = A.Fake<SignInManager<AppUser>>();  
             _validatorRegister = A.Fake<IValidator<RegisterDto>>();
             _validatorLogin = A.Fake<IValidator<LoginDto>>();
+            _userService = A.Fake<IUserService>();   
         }
 
         [Fact]
@@ -51,7 +54,7 @@ namespace Test.Controller
             A.CallTo(() => _validatorRegister.ValidateAsync(registerDto,default)).Returns(Task.FromResult(validResult));
             A.CallTo(() => _userManager.CreateAsync(A<AppUser>.Ignored, A<string>.Ignored)).Returns(Task.FromResult(IdentityResult.Success));
             A.CallTo(() => _userManager.AddToRoleAsync(A<AppUser>.Ignored, A<string>.Ignored)).Returns(Task.FromResult(IdentityResult.Success));
-            var controller = new AccountController(_userManager,_tokenService,_signInManager);
+            var controller = new AccountController(_userManager,_tokenService,_signInManager, _userService);
 
             //Act
             var result = await controller.Register(registerDto, _validatorRegister); ;
@@ -62,6 +65,23 @@ namespace Test.Controller
             result.Should().BeOfType<OkObjectResult>();
         }
 
+        [Fact]
+        public async Task AccountController_GetUserByUserName_ReturnOk()
+        {
+            //Arrange
+            var userName = "Test";
+            var fakeUser = A.Fake<UserFullDto>(); 
+            fakeUser.UserName = userName;
 
+            A.CallTo(() => _userService.GetUserByUserName(userName))
+                .Returns(Task.FromResult<UserFullDto?>(fakeUser));
+            var controller = new AccountController(_userManager, _tokenService, _signInManager, _userService);
+            //Act
+            var result = await controller.GetUserByUserName(userName);
+
+            //Assert
+            result.Should().NotBeNull();
+            result.Should().BeOfType<OkObjectResult>();
+        }
     }
 }
