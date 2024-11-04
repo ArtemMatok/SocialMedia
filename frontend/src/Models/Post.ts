@@ -5,6 +5,7 @@ export type PostGetDto = {
     postCaption:string;
     tags:string[];
     image:string;
+    location:string;
     userId:string;
     likes:UserLikeDto[]
 }
