@@ -13,3 +13,11 @@ export type PostGetDto = {
 export type PostLikeDto = {
     postId:number;
 }
+
+export type PostCreateDto = {
+    postCaption:string;
+    image:string[];
+    location:string;
+    tags:string[];
+    userId:string;
+}

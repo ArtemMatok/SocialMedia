@@ -7,7 +7,7 @@ import "swiper/css"; // Import Swiper styles
 import "swiper/css/navigation"; // Import navigation styles
 
 type Props = {
-  fileChange: (FILES: File[]) => void;
+  fileChange: (giles: string[]) => void;
   mediaUrl: string;
 };
 
@@ -17,10 +17,11 @@ const FileUploader = ({ fileChange, mediaUrl }: Props) => {
 
   const onDrop = useCallback(
     (acceptedFiles: FileWithPath[]) => {
-      setFiles(acceptedFiles);
-      fileChange(acceptedFiles);
-
       const newFileUrls = acceptedFiles.map((file) => URL.createObjectURL(file));
+      setFiles(acceptedFiles);
+      fileChange(newFileUrls);
+
+      
       setFileUrls(newFileUrls);
     },
     [fileChange]
